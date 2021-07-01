@@ -9,10 +9,9 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <base target="rightFrame">
-  <title>Document</title>
+  <title>left</title>
   <link href="css/left.css" rel="stylesheet" type="text/css" />
-  <script language="JavaScript" src="js/jquery-1.x.js"></script>
+  <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
   <script type="text/javascript">
     $(function() {
       $(".menuson li").click(function() {
@@ -34,43 +33,23 @@
 </head>
 
 <body>
-<div class="lefttop"><span></span>功能菜单</div>
-<dl class="leftmenu">
-  <dd>
-    <div class="title"> <span><img src="../src/manageadmin/images/leftico05.png" /></span>购物后台管理 </div>
-    <ul class="menuson">
-      <li><cite></cite>添加商品</a><i></i></li>
-      <li class="active"><cite></cite><a href="shoplist.html">商品列表</a><i></i></li>
-      <li><cite></cite>商品类型</li>
-    </ul>
-  </dd>
-  <dd>
-    <div class="title"> <span><img src="../src/manageadmin/images/leftico02.png" /></span>影视后台管理 </div>
-  </dd>
-  <dd>
-    <div class="title"><span><img src="../src/manageadmin/images/leftico05.png" /></span>餐饮后台管理</div>
-  </dd>
-  <dd>
-    <div class="title"><span><img src="../src/manageadmin/images/leftico04.png" /></span>订单管理</div>
-  </dd>
-  <dd>
-    <div class="title"><span><img src="../src/manageadmin/images/leftico04.png" /></span>交易记录</div>
-  </dd>
-  <dd>
-    <div class="title"><span><img src="../src/manageadmin/images/leftico06.png" /></span>统计报表</a>
-    </div>
-  </dd>
-  <dd>
-    <div class="title"><span><img src="../src/manageadmin/images/leftico04.png" /></span>权限分配</div>
-  </dd>
-  <dd>
-    <div class="title"><span><img src="../src/manageadmin/images/leftico08.png" /></span>修改密码</div>
-  </dd>
-  <dd>
-    <div class="title"><span><img src="../src/manageadmin/images/leftico07.png" /></span>系统设置</div>
-  </dd>
-</dl>
-
+  <div class="lefttop"><span></span>学籍管理系统</div>
+    <dl class="leftmenu">
+      <dd>
+        <div class="title"> <span><img src="images/leftico05.png" /></span>学籍信息 </div>
+        <ul class="menuson">
+          <li class="active"><cite></cite>学籍卡片<i></i></li>
+          <li><cite></cite>毕业情况查询</li>
+        </ul>
+      </dd>
+      <dd>
+        <div class="title"> <span><img src="images/leftico02.png" /></span>课程信息 </div>
+        <ul class="menuson">
+          <li class="active"><cite></cite>课程成绩查询<i></i></li>
+          <li><cite></cite>课程信息查询</li>
+        </ul>
+      </dd>
+    </dl>
 </body>
 
 </html>

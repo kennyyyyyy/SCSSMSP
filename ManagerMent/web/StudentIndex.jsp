@@ -18,10 +18,12 @@
 
 </head>
 <body>
-
-  <%-- 头部 --%>
-
-
-
+  <div>
+    <%--  头部--%>
+    <jsp:include page="head.jsp"></jsp:include>
+    <div class="left" style="width: 120%">
+      <jsp:include page="left.jsp"></jsp:include>
+    </div>
+  </div>
 </body>
 </html>

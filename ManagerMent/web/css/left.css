@@ -6,7 +6,7 @@
 	padding:0;
 }
 body{
-	font-family:'微软雅黑'; 
+	font-family:'微软雅黑';
 	margin:0 auto;
 	min-width:980px;
 	background-color:#f0f9fd;
@@ -37,14 +37,11 @@ a:hover{
 	color:#00a4ac;
 	text-decoration:none;
 }
-.leftnav{
-	width: 200px;
-	margin-top: 100px;
-}
 
 /*left.html*/
 .lefttop{
-	background:url(images/lefttop.gif) repeat-x;
+	background:url(../images/lefttop.gif) repeat-x;
+	margin-top: 50px;
 	height:40px;
 	color:#fff;
 	font-size:14px;
@@ -54,20 +51,20 @@ a:hover{
 	margin-left:8px; 
 	margin-top:10px;
 	margin-right:8px; 
-	background:url(images/leftico.png) no-repeat;
+	background:url(../images/leftico.png) no-repeat;
 	width:20px; 
 	height:21px;
 	float:left;
 }
 .leftmenu{
 	width:187px;
-	padding-bottom: 9999px;
-	margin-bottom: -9999px; 
+	/*padding-bottom: 9999px;*/
+	/*margin-bottom: -9999px;*/
 	overflow:hidden; 
-	background:url(images/leftline.gif) repeat-y right;
+	background:url(../images/leftline.gif) repeat-y right;
 }
 .leftmenu dd{
-	background:url(images/leftmenubg.gif) repeat-x;
+	background:url(../images/leftmenubg.gif) repeat-x;
 	line-height:35px;
 	font-weight:bold;
 	font-size:14px;
@@ -83,13 +80,14 @@ a:hover{
 	display:block;
 }
 .menuson {
-	line-height:30px; font-weight:normal; }
+	line-height:30px; font-weight:normal;
+}
 .menuson li a{
 	cursor:pointer;
 }
 .menuson li.active{
 	position:relative; 
-	background:url(images/libg.png) repeat-x;
+	background:url(../images/libg.png) repeat-x;
 	line-height:30px; 
 	color:#fff;
 }
@@ -97,17 +95,17 @@ a:hover{
 	display:block; 
 	float:left; 
 	margin-left:32px; 
-	background:url(images/list.gif) no-repeat;
+	background:url(../images/list.gif) no-repeat;
 	width:16px; 
 	height:16px; 
 	margin-top:7px;
 }
 .menuson li.active cite{
-	background:url(images/list1.gif) no-repeat;
+	background:url(../images/list1.gif) no-repeat;
 }
 .menuson li.active i{
 	display:block; 
-	background:url(images/sj.png) no-repeat;
+	background:url(../images/sj.png) no-repeat;
 	width:6px; 
 	height:11px; 
 	position:absolute; 
