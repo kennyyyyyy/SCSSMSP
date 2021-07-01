@@ -12,7 +12,7 @@
 
 </head>
 <body>
-    <nav class="navbar navbar-default  navbar-fixed-top">
+    <nav class="navbar navbar-default  navbar-fixed-top" style="background-color: rgba(0,0,0,0.6)">
         <div class="container-fluid">
 
             <div class="navbar-header">
@@ -26,20 +26,20 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <%--  链接到登陆后的默认状态--%>
-                    <li><a href="register.jsp">首页</a></li>
+                    <li><a href="register.jsp" style="color: whitesmoke">首页</a></li>
                 </ul>
 
                 <%--  获得登录人的信息 flag表示学生或管理员--%>
                 <c:if test="$flag==1">
-                    <p class="navbar-text"> ${student.sname } </p>
+                    <p class="navbar-text" style="color: whitesmoke"> ${student.sname } </p>
                 </c:if>
 
                 <c:if test="$flag==2">
-                    <p class="navbar-text"> 管理员 </p>
+                    <p class="navbar-text" style="color: whitesmoke"> 管理员 </p>
                 </c:if>
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="LoginOutServlet">退出</a></li>
+                    <li><a href="LoginOutServlet" style="color: whitesmoke">退出</a></li>
                 </ul>
 
             </div>

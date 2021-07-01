@@ -18,15 +18,21 @@
 
 </head>
 <body>
-  <div>
-    <%--  头部--%>
-    <jsp:include page="head.jsp"></jsp:include>
-    <div class="left" style=" width: 120%">
-      <jsp:include page="webstudent/studentLeft.jsp"></jsp:include>
-      <iframe src="AdminIndex.jsp" frameborder="0" style="float: right" width="100%"> </iframe>
-<%--     // <div style="float: right"><jsp:include page="AdminIndex.jsp"></jsp:include></div>--%>
-    </div>
+  <div class="container-fluid" style="height: 100%">
 
+      <%--  头部--%>
+      <jsp:include page="head.jsp"></jsp:include>
+
+      <div class="row">
+
+          <div class="col-xs-2 col-md-2" style="margin-top: 54px;">
+              <jsp:include page="webstudent/studentLeft.jsp"></jsp:include>
+          </div>
+          <div class="col-xs-8 col-md-10" style="margin-top: 54px;">
+            <%-- <iframe src="AdminIndex.jsp" frameborder="0" align="right" scrolling="auto"> </iframe>--%>
+              <jsp:include page="AdminIndex.jsp"></jsp:include>
+          </div>
+      </div>
   </div>
 </body>
 </html>
