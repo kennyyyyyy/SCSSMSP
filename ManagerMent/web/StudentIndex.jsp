@@ -21,9 +21,12 @@
   <div>
     <%--  头部--%>
     <jsp:include page="head.jsp"></jsp:include>
-    <div class="left" style="width: 120%">
+    <div class="left" style=" width: 120%">
       <jsp:include page="webstudent/studentLeft.jsp"></jsp:include>
+      <iframe src="AdminIndex.jsp" frameborder="0" style="float: right" width="100%"> </iframe>
+<%--     // <div style="float: right"><jsp:include page="AdminIndex.jsp"></jsp:include></div>--%>
     </div>
+
   </div>
 </body>
 </html>
