@@ -34,20 +34,3 @@
 
 </body>
 </html>
-
-
-<body>
-<div class="lefttop"><span></span>学籍管理系统</div>
-<dl class="leftmenu">
-  <dd>
-    <div class="title"> <span><img src="../images/leftico05.png" /></span>信息管理 </div>
-    <ul class="menuson">
-      <li class="active"><cite></cite>课程信息管理<i></i></li>
-      <li><cite></cite>学籍信息管理<i></i></li>
-      <li><cite></cite>成绩管理<i></i></li>
-    </ul>
-  </dd>
-</dl>
-</body>
-
-</html>

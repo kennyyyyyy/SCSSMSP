@@ -16,46 +16,21 @@
 
 </head>
 <body>
-<div style="float: left">
-<form class="form-inline">
-  <div class="form-group">
-    <label class="sr-only" for="exampleInputPassword3">Password</label>
-    <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Text input">
+<div class="container-fluid" style="height: 100%">
+
+  <%--  头部--%>
+  <jsp:include page="head.jsp"></jsp:include>
+
+  <div class="row">
+
+    <div class="col-xs-2 col-md-2" style="margin-top: 54px;">
+      <jsp:include page="webadmin/adminLeft.jsp"></jsp:include>
+    </div>
+    <div class="col-xs-8 col-md-10" style="margin-top: 54px;">
+       <iframe src="webadmin/adminAudit.jsp" frameborder="0" width="100%"> </iframe>
+<%--      <jsp:include page="webadmin/adminAudit.jsp"></jsp:include>--%>
+    </div>
   </div>
-  <button type="submit" class="btn btn-default">查找</button>
-</form>
 </div>
-<div style="float: right">
-<a class="btn btn-default active" href="#" role="button">审核学生信息</a>
-<a class="btn btn-default active" href="#" role="button">导入学生信息</a>
-</div>
-<table class="table table-hover" style="overflow-x: hidden">
-  <tr class="info">
-    <th>学号</th>
-    <th>姓名</th>
-    <th>籍贯</th>
-    <th>出生日期</th>
-    <th>民族</th>
-    <th>入学时间</th>
-    <th>是否毕业</th>
-    <th>出生日期</th>
-    <th>民族</th>
-    <th>入学时间</th>
-    <th>是否毕业</th>
-  </tr>
-  <tr>
-    <td>55555555555</td>
-    <td>55555555555</td>
-    <td>55555555555</td>
-    <td>55555555555</td>
-    <td>55555555555</td>
-    <td>55555555555</td>
-    <td>55555555555</td>
-    <td>55555555555</td>
-    <td>55555555555</td>
-    <td>55555555555</td>
-    <td>55555555555</td>
-  </tr>
-</table>
 </body>
 </html>
