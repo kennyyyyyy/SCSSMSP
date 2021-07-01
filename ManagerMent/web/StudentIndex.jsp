@@ -22,7 +22,7 @@
     <%--  头部--%>
     <jsp:include page="head.jsp"></jsp:include>
     <div class="left" style="width: 120%">
-      <jsp:include page="left.jsp"></jsp:include>
+      <jsp:include page="webstudent/studentLeft.jsp"></jsp:include>
     </div>
   </div>
 </body>

@@ -30,7 +30,8 @@
   <div class="login-form">
     <h2>学籍管理系统登录</h2>
     <div class="agileits-top">
-      <form action="#" method="post">
+<%--     登录的servlet--%>
+      <form action="StudentIndex.jsp" method="post">
         <div class="styled-input">
           <input type="text" name="User Name" required="" />
           <label>用户名或学号</label>
