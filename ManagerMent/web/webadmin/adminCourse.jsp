@@ -11,6 +11,7 @@
     <title>Title</title>
     <base target="rightFrame">
   <meta charset="UTF-8">
+    <base target="rightFrame">
   <link rel="stylesheet" href="../bootstrap-3.4.1/css/bootstrap.min.css">
   <script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
   <script type="text/javascript" src="../bootstrap-3.4.1/js/bootstrap.min.js"></script>
@@ -52,19 +53,20 @@
                     <th width="85px" style="text-align: center">课程性质</th>
                     <th width="20px" style="text-align: center">学分</th>
 
-                </tr>
-                <tr class="success">
-                    <td>201908010327</td>
-                    <td>12345</td>
-                    <td>java设计与开发</td>
-                    <td>2020上半年</td>
-                    <td>专业课</td>
-                    <td>5</td>
-                </tr>
-                </tr>
-            </table>
-        </div>
-    </div>
-
+        </tr>
+        <tr class="success">
+            <td>201908010327</td>
+            <td>12345</td>
+            <td>java设计与开发</td>
+            <td>2020上半年</td>
+            <td>专业课</td>
+            <td>5</td>
+        </tr>
+        </tr>
+    </table>
+</div>
+<%--      <jsp:include page="webadmin/adminAudit.jsp"></jsp:include>--%>
+</div>
+</div>
 </body>
 </html>

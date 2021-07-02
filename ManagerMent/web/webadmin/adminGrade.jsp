@@ -11,7 +11,6 @@
     <title>Title</title>
     <base target="rightFrame">
     <meta charset="UTF-8">
-    <base target="rightFrame">
     <link rel="stylesheet" href="../bootstrap-3.4.1/css/bootstrap.min.css">
     <script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="../bootstrap-3.4.1/js/bootstrap.min.js"></script>
@@ -40,8 +39,8 @@
     </div>
 
     <div style="float: right">
-        <a class="btn btn-default active" href="adminCourseModify.jsp" role="button">修改学生课程信息</a>
-        <a class="btn btn-default active" href="adminCourseAdd.jsp" role="button">导入学生课程信息</a>
+        <a class="btn btn-default active" href="adminGradeModify.jsp" role="button">修改学生成绩信息</a>
+        <a class="btn btn-default active" href="adminGradeAdd.jsp" role="button">导入学生成绩信息</a>
     </div>
 </div>
 <div class="middle">
@@ -49,32 +48,17 @@
         <tr class="success">
             <th width="125px" style="text-align: center">学号</th>
             <th width="85px" style="text-align: center">课程编号</th>
-            <th width="150px" style="text-align: center">课程名称</th>
-            <th width="150px" style="text-align: center">开课时间</th>
-            <th width="85px" style="text-align: center">课程性质</th>
-            <th width="50px" style="text-align: center">学分</th>
-            <th width="80px"  style="text-align: center">操作</th>
+            <th width="25px" style="text-align: center">成绩</th>
 
         </tr>
         <tr class="success">
             <td>201908010327</td>
             <td>12345</td>
-            <td>java设计与开发</td>
-            <td>2020上半年</td>
-            <td>专业课</td>
-            <td>5</td>
-            <td>
-								<span>
-									<button class="btn btn-info btn-xs" >审核</button>
-								</span>
-                <button class="btn btn-primary btn-xs">修改</button>
-            </td>
+            <td>88</td>
         </tr>
         </tr>
     </table>
 </div>
 <%--      <jsp:include page="webadmin/adminAudit.jsp"></jsp:include>--%>
-</div>
-</div>
 </body>
 </html>
