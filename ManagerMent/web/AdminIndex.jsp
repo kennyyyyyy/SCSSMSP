@@ -9,8 +9,10 @@
 <html>
 <head>
   <title>首页</title>
+  <base target="rightFrame">
   <meta charset="UTF-8">
   <link rel="stylesheet" href="bootstrap-3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/left.css">
   <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
   <script type="text/javascript" src="bootstrap-3.4.1/js/bootstrap.min.js"></script>
 
@@ -23,12 +25,13 @@
 
   <div class="row">
 
-    <div class="col-xs-2 col-md-2" style="margin-top: 54px;">
+    <div class="list-group col-xs-2 col-md-2" style="margin-top: 54px;" id="left">
       <jsp:include page="webadmin/adminLeft.jsp"></jsp:include>
     </div>
+
     <div class="col-xs-8 col-md-10" style="margin-top: 54px;">
-       <iframe src="webadmin/adminAudit.jsp" frameborder="0" width="100%"> </iframe>
-<%--      <jsp:include page="webadmin/adminAudit.jsp"></jsp:include>--%>
+      <%--      <jsp:include page="webadmin/adminAudit.jsp"></jsp:include>--%>
+      <iframe src="webadmin/adminAdd.jsp" frameBorder="0" marginwidth="0px" width="100%" height="100%" name="rightFrame" id="rightFrame"></iframe>
     </div>
   </div>
 </div>

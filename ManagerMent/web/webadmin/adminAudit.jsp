@@ -10,7 +10,7 @@
 <html>
 <head>
   <title>Title</title>
-  <base target="_parent">
+  <base target="rightFrame">
   <meta charset="UTF-8">
   <link rel="stylesheet" href="../bootstrap-3.4.1/css/bootstrap.min.css">
   <script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
@@ -21,43 +21,11 @@
     }
   </style>
 
-  <script type="text/javascript">
-    $(function() {
-      $(".list-group a").click(function() {
-        $(".list-group a.active").removeClass("active")
-        $(this).addClass("active");
-      });
-    })
-  </script>
-
 </head>
 <body>
 
-
-  <%--  头部--%>
-  <jsp:include page="../head.jsp"></jsp:include>
-
-  <div class="row">
-
-    <div class="col-xs-2 col-md-2" style="margin-top: 54px;">
-      <div class="list-group">
-        <h4 class="list-group-item" style="">信息管理</h4>
-        <a href="#" class="list-group-item">课程信息管理</a>
-        <a href="adminAudit.jsp" class="list-group-item active">学籍信息管理</a>
-        <a href="#" class="list-group-item">成绩管理</a>
-      </div>
-    </div>
-    <div class="col-xs-8 col-md-10" style="margin-top: 54px;">
-      <div>
-        <div style="float: right">
-          <a class="btn btn-default active" href="#" role="button">审核学生信息</a>
-          <a class="btn btn-default active" href="#" role="button">导入学生信息</a>
-        </div>
-      </div>
-
-
-      <div class="middle">
-        <table class="table table-bordered" style=" overflow-x: hidden " >
+  <div class="middle">
+        <table class="table table-bordered" style=" overflow-x: hidden" >
           <tr class="success">
             <th width="125px" style="text-align: center">学号</th>
             <th width="50px" style="text-align: center">性别</th>
@@ -95,9 +63,7 @@
           </tr>
         </table>
       </div>
-      <%--      <jsp:include page="webadmin/adminAudit.jsp"></jsp:include>--%>
-    </div>
-  </div>
+
 
 </body>
 </html>

@@ -9,6 +9,7 @@
 <html>
 <head>
     <title>Title</title>
+    <base target="rightFrame">
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../bootstrap-3.4.1/css/bootstrap.min.css">
     <script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>

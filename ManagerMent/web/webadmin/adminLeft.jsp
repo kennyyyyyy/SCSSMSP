@@ -23,13 +23,14 @@
       });
     })
   </script>
+
 </head>
 <body>
   <div class="list-group">
     <h4 class="list-group-item" style="">信息管理</h4>
-    <a href="#" class="list-group-item active">课程信息管理</a>
-    <a href="#" class="list-group-item">学籍信息管理</a>
-    <a href="#" class="list-group-item">成绩管理</a>
+    <a href="webadmin/adminCourse.jsp" class="list-group-item active">课程信息管理</a>
+    <a href="webadmin/adminAd.jsp" class="list-group-item">学籍信息管理</a>
+    <a href="webadmin/adminAudit.jsp" class="list-group-item">成绩管理</a>
   </div>
 
 </body>

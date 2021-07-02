@@ -27,8 +27,8 @@
 <body>
   <div class="list-group">
     <h4 class="list-group-item" style="">学籍信息</h4>
-    <a href="#" class="list-group-item active">学籍卡片</a>
-    <a href="#" class="list-group-item">毕业情况查询</a>
+    <a href="../webadmin/adminCourseAdd.jsp" class="list-group-item active">学籍卡片</a>
+    <a href="../webadmin/adminCourseModify.jsp" class="list-group-item" target="">毕业情况查询</a>
     <h4 class="list-group-item">课程信息</h4>
     <a href="#" class="list-group-item">课程成绩查询</a>
     <a href="#" class="list-group-item">课程信息查询</a>

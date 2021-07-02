@@ -9,6 +9,7 @@
 <html>
 <head>
     <title>Title</title>
+    <base target="rightFrame">
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../bootstrap-3.4.1/css/bootstrap.min.css">
     <script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
@@ -37,37 +38,37 @@
     <div class="col-sm-6 col-md-6">
         <form class="form-horizontal" action="register" method="post">
             <div class="form-group">
-                <label for="inputEmail3" class="col-sm-2 control-label">学号</label>
+                <label for="nickName" class="col-sm-2 control-label">学号</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="nickName" name="nickName" placeholder="学号">
                 </div>
             </div>
             <div class="form-group">
-                <label for="inputEmail3" class="col-sm-2 control-label">课程编号</label>
+                <label for="name" class="col-sm-2 control-label">课程编号</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="name" name="name" placeholder="课程编号">
                 </div>
             </div>
             <div class="form-group">
-                <label for="inputPassword3" class="col-sm-2 control-label">课程名称</label>
+                <label for="admission_data" class="col-sm-2 control-label">课程名称</label>
                 <div class="col-sm-10">
                     <input type="password" class="form-control" id="admission_data" name="admission_data" placeholder="课程名称">
                 </div>
             </div>
             <div class="form-group">
-                <label for="inputPassword3" class="col-sm-2 control-label">开课时间</label>
+                <label for="graduation_data" class="col-sm-2 control-label">开课时间</label>
                 <div class="col-sm-10">
                     <input type="password" class="form-control" id="graduation_data" name="graduation_data" placeholder="开课时间">
                 </div>
             </div>
             <div class="form-group">
-                <label for="inputPassword3" class="col-sm-2 control-label">课程性质</label>
+                <label for="major" class="col-sm-2 control-label">课程性质</label>
                 <div class="col-sm-10">
                     <input type="password" class="form-control" id="major" name="major" placeholder="课程性质">
                 </div>
             </div>
             <div class="form-group">
-                <label for="inputPassword3" class="col-sm-2 control-label">学分</label>
+                <label for="id_card" class="col-sm-2 control-label">学分</label>
                 <div class="col-sm-10">
                     <input type="password" class="form-control" id="id_card" name="id_card" placeholder="学分">
                 </div>

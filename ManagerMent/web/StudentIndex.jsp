@@ -16,12 +16,6 @@
     <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="bootstrap-3.4.1/js/bootstrap.min.js"></script>
 
-    <script type="text/javascript">
-
-
-    </script>
-
-
 </head>
 <body>
   <div class="container-fluid" style="height: 100%">
@@ -31,12 +25,11 @@
 
       <div class="row">
 
-          <div class="col-xs-2 col-md-2" style="margin-top: 54px;">
-              <jsp:include page="webstudent/studentLeft.jsp"></jsp:include>
+          <div class="col-xs-2 col-md-2" style="margin-top: 54px;" id="left">
+          <jsp:include page="webstudent/studentLeft.jsp"></jsp:include>
           </div>
           <div class="col-xs-8 col-md-10" style="margin-top: 54px;">
-            <%-- <iframe src="AdminIndex.jsp" frameborder="0" align="right" scrolling="auto"> </iframe>--%>
-              <jsp:include page="#"></jsp:include>
+              <iframe src="webadmin/adminAdd.jsp" frameborder="0" frameBorder="0" marginwidth="0px" width="100%" height="100%" name="rightFrame" id="rightFrame"></iframe>
           </div>
       </div>
   </div>
