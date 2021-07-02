@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-
+    <link rel="stylesheet" href="css/head.css">
 </head>
 <body>
     <nav class="navbar navbar-default  navbar-fixed-top" style="background-color: rgba(0,0,0,0.6)">
@@ -18,7 +18,8 @@
             <div class="navbar-header">
             <%-- 链接登录页面--%>
                 <a href="index">
-                    <span class="glyphicon glyphicon-asterisk" style="width: 200%;margin-top: 10px"></span>
+                    <span class="logo"></span>
+<%--                        <img src="images/head/logo.png" alt="">--%>
                 </a>
             </div>
 

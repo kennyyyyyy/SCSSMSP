@@ -1,0 +1,11 @@
+
+.logo{
+    display: block;
+    background: url("../images/head/logo.png") no-repeat;
+    width: 59px;
+    height: 54px;
+}
+
+.navbar{
+    background: url("../images/head/topNav.png") repeat-x;
+}

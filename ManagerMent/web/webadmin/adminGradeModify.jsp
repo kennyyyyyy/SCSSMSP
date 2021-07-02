@@ -39,8 +39,8 @@
   </div>
 
   <div style="float: right">
-    <a class="btn btn-default active" href="#" role="button">修改学生成绩信息</a>
-    <a class="btn btn-default active" href="#" role="button">导入学生成绩信息</a>
+    <a class="btn btn-default active" href="adminGradeModify.jsp" role="button">修改学生成绩信息</a>
+    <a class="btn btn-default active" href="adminGradeAdd.jsp" role="button">导入学生成绩信息</a>
   </div>
 </div>
 <div class="middle">

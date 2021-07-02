@@ -64,9 +64,9 @@
             <td>专业课</td>
             <td>5</td>
             <td>
-								<span>
-									<button class="btn btn-info btn-xs" >审核</button>
-								</span>
+                <span>
+                    <button class="btn btn-info btn-xs" >审核</button>
+                </span>
                 <button class="btn btn-primary btn-xs">修改</button>
             </td>
         </tr>

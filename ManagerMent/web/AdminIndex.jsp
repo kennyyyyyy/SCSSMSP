@@ -28,7 +28,7 @@
       <jsp:include page="webadmin/adminLeft.jsp"></jsp:include>
     </div>
     <div class="col-xs-8 col-md-10" style="margin-top: 54px;">
-       <iframe src="webadmin/adminAdd.jsp" frameborder="0" width="100%"> </iframe>
+      <iframe src="webadmin/adminAudit.jsp" frameborder="0" frameBorder="0" marginwidth="0px" width="100%" height="90%" name="rightFrame" id="rightFrame"></iframe>
     </div>
   </div>
 </div>
