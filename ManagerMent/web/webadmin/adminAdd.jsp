@@ -39,7 +39,7 @@
   <div class="col-sm-6 col-md-6">
     <form class="form-horizontal" action="register" method="post">
       <div class="form-group">
-        <label for="nickName" class="col-sm-2 control-label">学号</label>
+        <label for="sno" class="col-sm-2 control-label">学号</label>
         <div class="col-sm-10">
           <input type="text" class="form-control" id="sno" name="sno" placeholder="学号">
         </div>
@@ -66,20 +66,20 @@
       <div class="form-group">
         <label for="admission_data" class="col-sm-2 control-label">入学时间</label>
         <div class="col-sm-10">
-          <input type="password" class="form-control" id="admission_data" name="admission_data" placeholder="入学时间">
+          <input type="text" class="form-control" id="admission_data" name="admission_data" placeholder="入学时间">
         </div>
       </div>
 
       <div class="form-group">
         <label for="major" class="col-sm-2 control-label">专业</label>
         <div class="col-sm-10">
-          <input type="password" class="form-control" id="major" name="major" placeholder="专业">
+          <input type="text" class="form-control" id="major" name="major" placeholder="专业">
         </div>
       </div>
       <div class="form-group">
         <label for="id_card" class="col-sm-2 control-label">身份证号</label>
         <div class="col-sm-10">
-          <input type="password" class="form-control" id="id_card" name="id_card" placeholder="身份证号">
+          <input type="text" class="form-control" id="id_card" name="id_card" placeholder="身份证号">
         </div>
       </div>
 

@@ -27,36 +27,37 @@
   </style>
 </head>
 <body>
-<div>
-  <div style="float:left;">
-    <form class="form-inline" >
-      <div class="form-group">
-        <label for="exampleInputName2">学号</label>
-        <input type="text" class="form-control" id="exampleInputName2" placeholder="请输入学号">
+<div class="container" style="text-align: center;width: 1000px">
+      <div>
+        <div style="float:left;">
+          <form class="form-inline" >
+            <div class="form-group">
+              <label for="exampleInputName2">学号</label>
+              <input type="text" class="form-control" id="exampleInputName2" placeholder="请输入课程编号">
+            </div>
+            <button type="submit" class="btn btn-default">搜索</button>
+          </form>
+        </div>
+
+
       </div>
-      <button type="submit" class="btn btn-default">搜索</button>
-    </form>
-  </div>
+      <div class="middle">
+        <table class="table table-bordered" style=" overflow-x: hidden " >
+          <tr class="success">
+            <th width="85px" style="text-align: center">课程编号</th>
+            <th width="85px" style="text-align: center">课程名称</th>
+            <th width="25px" style="text-align: center">成绩</th>
 
-  <div style="float: right">
-    <a class="btn btn-default active" href="adminGradeModify.jsp" role="button">修改学生成绩信息</a>
-    <a class="btn btn-default active" href="adminGradeAdd.jsp" role="button">导入学生成绩信息</a>
-  </div>
+          </tr>
+          <tr class="success">
+            <td>12345</td>
+            <td>java程序设计</td>
+            <td>88</td>
+          </tr>
+          </tr>
+        </table>
+      </div>
+      <%--      <jsp:include page="webadmin/adminAudit.jsp"></jsp:include>--%>
 </div>
-<div class="middle">
-  <table class="table table-bordered" style=" overflow-x: hidden " >
-    <tr class="success">
-      <th width="85px" style="text-align: center">课程编号</th>
-      <th width="25px" style="text-align: center">成绩</th>
-
-    </tr>
-    <tr class="success">
-      <td>12345</td>
-      <td>88</td>
-    </tr>
-    </tr>
-  </table>
-</div>
-<%--      <jsp:include page="webadmin/adminAudit.jsp"></jsp:include>--%>
 </body>
 </html>
