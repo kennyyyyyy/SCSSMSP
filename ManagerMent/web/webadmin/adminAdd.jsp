@@ -41,7 +41,7 @@
       <div class="form-group">
         <label for="nickName" class="col-sm-2 control-label">学号</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="nickName" name="nickName" placeholder="学号">
+          <input type="text" class="form-control" id="sno" name="sno" placeholder="学号">
         </div>
       </div>
       <div class="form-group">
@@ -69,12 +69,7 @@
           <input type="password" class="form-control" id="admission_data" name="admission_data" placeholder="入学时间">
         </div>
       </div>
-      <div class="form-group">
-        <label for="graduation_data" class="col-sm-2 control-label">毕业时间</label>
-        <div class="col-sm-10">
-          <input type="password" class="form-control" id="graduation_data" name="graduation_data" placeholder="毕业时间">
-        </div>
-      </div>
+
       <div class="form-group">
         <label for="major" class="col-sm-2 control-label">专业</label>
         <div class="col-sm-10">
@@ -87,18 +82,8 @@
           <input type="password" class="form-control" id="id_card" name="id_card" placeholder="身份证号">
         </div>
       </div>
-      <div class="form-group">
-        <label for="email" class="col-sm-2 control-label">电子邮箱</label>
-        <div class="col-sm-10">
-          <input type="password" class="form-control" id="email" name="email" placeholder="电子邮箱">
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="postal_coder" class="col-sm-2 control-label">邮政编码</label>
-        <div class="col-sm-10">
-          <input type="password" class="form-control" id="postal_coder" name="postal_code" placeholder="邮政编码">
-        </div>
-      </div>
+
+
 
             <div class="form-group">
               <div class="col-sm-offset-2 col-sm-10">

@@ -11,7 +11,7 @@ public class DBConUtil {
      * ② 关闭指定的连接对象，释放资源
      */
     private static String path = "com.mysql.cj.jdbc.Driver";
-    private static String url = "jdbc:mysql://localhost:3306/index?useUnicode=true&characterEncoding=utf-8";
+    private static String url = "jdbc:mysql://localhost:3306/SCSSMSP?useUnicode=true&characterEncoding=utf-8";
     private static String user = "root";
     private static String password = "123456";
 
