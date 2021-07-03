@@ -369,7 +369,7 @@ h2 {
 }
 
 .LoginType input[type="radio"]:checked+label:before {
-    background-color: #01cd78;
+    background-color: #3ea47a;
     background-clip: content-box;
     padding: .2em;
 }
@@ -377,6 +377,8 @@ h2 {
 .LoginType {
     display: inline-block;
 }
+
+
 
 .floatright {
     float: right;

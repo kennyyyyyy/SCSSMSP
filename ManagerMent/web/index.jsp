@@ -30,15 +30,16 @@
   <div class="login-form">
     <h2>学籍管理系统登录</h2>
     <div class="agileits-top">
-<%--     登录的servlet--%>
-      <form action="StudentIndex.jsp" method="post">
+      <span style="margin-left: 100px; color: red;" >${info }</span>
+      <%--     登录的servlet--%>
+      <form action="login" method="post">
         <div class="styled-input">
-          <input type="text" name="User Name" required="" />
+          <input type="text" name="userName" required="" />
           <label>用户名或学号</label>
           <span></span>
         </div>
         <div class="styled-input">
-          <input type="password" name="Password" required="">
+          <input type="password" name="password" required="">
           <label>密码</label>
           <span></span>
         </div>
@@ -46,12 +47,12 @@
           <ul>
             <li>
               <div class="LoginType">
-                <input type="radio" id="LoginType1" value="1" name="LoginType">
-                <label for="LoginType1"> 学生</label>
+                <input type="radio" id="LoginType1" value="1" name="LoginType" checked>
+                <label for="LoginType1" style="color: whitesmoke"> 学生</label>
               </div>
               <div class="LoginType floatright">
                 <input type="radio" id="LoginType2" value="2" name="LoginType">
-                <label for="LoginType2"> 管理员</label>
+                <label for="LoginType2" style="color: whitesmoke"> 管理员</label>
               </div>
             </li>
           </ul>

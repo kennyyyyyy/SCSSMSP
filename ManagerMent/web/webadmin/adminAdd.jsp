@@ -37,7 +37,7 @@
   <div class="col-sm-6 col-md-3">
   </div>
   <div class="col-sm-6 col-md-6">
-    <form class="form-horizontal" action="register" method="post">
+    <form class="form-horizontal" action="../import" method="post" name="addForm">
       <div class="form-group">
         <label for="sno" class="col-sm-2 control-label">学号</label>
         <div class="col-sm-10">
@@ -66,7 +66,7 @@
       <div class="form-group">
         <label for="admission_data" class="col-sm-2 control-label">入学时间</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="admission_data" name="admission_data" placeholder="入学时间">
+          <input type="date" class="form-control" id="admission_data" name="admission_data" placeholder="入学时间">
         </div>
       </div>
 
@@ -83,18 +83,17 @@
         </div>
       </div>
 
-
-
-            <div class="form-group">
-              <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="btn btn-primary">添加</button>
-              </div>
-            </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-primary">添加</button>
+          </div>
+        </div>
           </form>
         </div>
-        <div class="col-sm-6 col-md-3">
-        </div>
-        </div>
+      <div class="col-sm-6 col-md-3">
+
+      </div>
+    </div>
   </div>
 </body>
 </html>
