@@ -29,7 +29,7 @@
             <h2>学籍卡片</h2>
             <table class="table table-bordered" style=" overflow-x: hidden " >
                 <tr class="success" >
-                    <td><img src="../images/ty.png" width="100px" height="55px"></td>
+                    <td><img src="/images/1.jpg" width="100px" height="55px"></td>
                     <td >姓名</td>
                     <td width="80px">谭懿</td>
                     <td >姓别</td>

@@ -24,6 +24,11 @@
         <servlet-class>Control.AdminServlet.CheckSnoServlet</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>UploadifyServlet</servlet-name>
+        <servlet-class>file.UploadifyServlet</servlet-class>
+    </servlet>
+
 
 
     <servlet-mapping>
@@ -45,4 +50,11 @@
         <servlet-name>CheckSnoServlet</servlet-name>
         <url-pattern>/checkSno</url-pattern>
     </servlet-mapping>
+
+    <!-- 文件上传 -->
+    <servlet-mapping>
+        <servlet-name>UploadifyServlet</servlet-name>
+        <url-pattern>/fileUpload</url-pattern>
+    </servlet-mapping>
+
 </web-app>
