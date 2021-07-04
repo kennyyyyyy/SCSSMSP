@@ -74,4 +74,37 @@ public class IAdminDaoImpl implements IAdminDao {
         }
         return i;
     }
+
+    /*
+    存在为false
+    不存在为true
+     */
+    public boolean checkSno(String sno){
+        PreparedStatement pstmt = null;
+        Connection conn = null;
+        ResultSet rs = null;
+
+        String sql = "select sno from student where sno=?";
+        boolean exits = true;
+
+        try{
+            conn = DBConUtil.getConn();
+
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, sno);
+
+            rs = pstmt.executeQuery();
+
+            if(rs.next()){
+                System.out.println(rs.getString("sno"));
+                exits = false;
+            }
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            DBConUtil.close( rs, pstmt,null);
+        }
+        return exits;
+    }
 }

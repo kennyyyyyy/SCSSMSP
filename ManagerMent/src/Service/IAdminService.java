@@ -13,4 +13,9 @@ public interface IAdminService {
     添加新生学籍信息
      */
     boolean addStudent(Student student);
+
+    /*
+    检查学号是否重复
+     */
+    boolean checkSno(String sno);
 }

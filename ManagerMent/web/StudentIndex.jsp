@@ -29,7 +29,7 @@
           <jsp:include page="webstudent/studentLeft.jsp"></jsp:include>
           </div>
           <div class="col-xs-8 col-md-10" style="margin-top: 54px;">
-              <iframe src="webadmin/adminAudit.jsp" frameborder="0" frameBorder="0" marginwidth="0px" width="100%" height="100%" name="rightFrame" id="rightFrame"></iframe>
+              <iframe src="webstudent/studentSchool.jsp" frameborder="0" frameBorder="0" marginwidth="0px" width="100%" height="100%" name="rightFrame" id="rightFrame" style="margin-top: 30px"></iframe>
           </div>
       </div>
   </div>

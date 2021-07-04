@@ -25,23 +25,34 @@ public class ImportStudentServlet extends HttpServlet {
 
 
         String sno = req.getParameter("sno");
-        String sname = req.getParameter("name");
-        String sextp = req.getParameter("sex");
-        String admission_data = req.getParameter("admission_data");
-        String major = req.getParameter("major");
-        String id_card = req.getParameter("id_card");
 
-        int sex = Integer.parseInt(sextp);
+        boolean exits = iAdminService.checkSno(sno);
 
-        Student student = new Student(sno, sname, sex, admission_data, major, id_card);
+        if(!exits){
+            String sname = req.getParameter("name");
+            String sextp = req.getParameter("sex");
+            String admission_data = req.getParameter("admission_data");
+            String major = req.getParameter("major");
+            String id_card = req.getParameter("id_card");
 
-        boolean result = iAdminService.addStudent(student);
+            int sex = Integer.parseInt(sextp);
 
-        if(result){
-            //跳转到学籍管理首页
-            req.getRequestDispatcher("../adminAudit.jsp").forward(req, resp);
-        } else {
-            req.getRequestDispatcher("../adminAdd.jsp").forward(req, resp);
+            Student student = new Student(sno, sname, sex, admission_data, major, id_card);
+
+            boolean result = iAdminService.addStudent(student);
+
+            if(result){
+                //跳转到学籍管理首页
+                req.getRequestDispatcher("webadmin/adminAudit.jsp").forward(req, resp);
+            } else {
+                req.getRequestDispatcher("webadmin/adminAdd.jsp").forward(req, resp);
+            }
         }
+        else {
+            req.setAttribute("info","该学号已存在");
+
+            req.getRequestDispatcher("webadmin/adminAdd.jsp").forward(req, resp);
+        }
+
     }
 }

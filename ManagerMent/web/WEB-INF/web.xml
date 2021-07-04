@@ -19,6 +19,11 @@
         <servlet-class>Control.AdminServlet.ImportStudentServlet</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>CheckSnoServlet</servlet-name>
+        <servlet-class>Control.AdminServlet.CheckSnoServlet</servlet-class>
+    </servlet>
+
 
 
     <servlet-mapping>
@@ -36,4 +41,8 @@
         <url-pattern>/import</url-pattern>
     </servlet-mapping>
 
+    <servlet-mapping>
+        <servlet-name>CheckSnoServlet</servlet-name>
+        <url-pattern>/checkSno</url-pattern>
+    </servlet-mapping>
 </web-app>

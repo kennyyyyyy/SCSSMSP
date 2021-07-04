@@ -46,7 +46,7 @@
                 </c:if>
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="loginOut" style="color: whitesmoke">退出</a></li>
+                    <li><a href="loginOut" style="color: whitesmoke" target="_parent">退出</a></li>
                 </ul>
 
             </div>

@@ -7,4 +7,6 @@ public interface IAdminDao {
     Admin login(Admin admin);
 
     int addStudent(Student student);
+
+    public boolean checkSno(String sno);
 }

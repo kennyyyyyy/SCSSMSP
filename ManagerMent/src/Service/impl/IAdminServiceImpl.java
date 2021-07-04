@@ -21,4 +21,9 @@ public class IAdminServiceImpl implements IAdminService {
         return iAdminDao.addStudent(student)>0?true:false;
     }
 
+    @Override
+    public boolean checkSno(String sno) {
+        return iAdminDao.checkSno(sno);
+    }
+
 }
