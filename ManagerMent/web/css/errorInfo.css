@@ -1,0 +1,6 @@
+span.error{
+    color:red;
+    margin: 2px auto 0;
+    display: block;
+    text-align: center;
+}

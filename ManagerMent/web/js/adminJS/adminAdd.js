@@ -50,29 +50,3 @@ $().ready(function () {
 
     })
 });
-
-function check(sno){
-    $.post({
-        url:"../checkSno",
-        dataType:"json",
-        asyncL:true,
-        data:{"sno":sno},
-        success:function(data) {
-            if(!(sno == null || sno == "" || sno == undefined))
-            {
-                if (data == false) {
-                    $("#sno").parent().append("<span style='display: block; color: red; text-align: center' id='info'>该学号已存在&nbsp;</span>");
-
-                    document.getElementById("submitBottom").setAttribute("disabled", "disabled");
-                } else {
-
-                    $("#submitBottom").removeAttr("disabled");
-                }
-            }
-        }
-    })
-}
-
-function removeInfo(){
-    $("#info").remove();
-}

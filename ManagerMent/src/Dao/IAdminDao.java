@@ -1,6 +1,7 @@
 package Dao;
 
 import Bean.Admin;
+import Bean.Score;
 import Bean.Student;
 
 public interface IAdminDao {
@@ -8,5 +9,8 @@ public interface IAdminDao {
 
     int addStudent(Student student);
 
-    public boolean checkSno(String sno);
+    int addScore(Score score);
+
+    boolean checkSno(String sno);
+    boolean checkCno(String cno);
 }

@@ -12,8 +12,13 @@
   <base target="rightFrame">
   <meta charset="UTF-8">
   <link rel="stylesheet" href="../bootstrap-3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/errorInfo.css">
   <script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
   <script type="text/javascript" src="../bootstrap-3.4.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/jquery.validate.js"></script>
+  <script type="text/javascript" src="../js/adminJS/adminGradeAdd.js"></script>
+  <script type="text/javascript" src="../js/adminJS/checkSno.js"></script>
+  <script type="text/javascript" src="../js/adminJS/checkCno.js"></script>
   <style>
     /*  body {
         font-family:Verdana;
@@ -36,22 +41,22 @@
           <div class="col-sm-6 col-md-3">
           </div>
           <div class="col-sm-6 col-md-6">
-            <form class="form-horizontal" action="register" method="post">
+            <form class="form-horizontal" action="../addScore" method="post"  id="addForm">
               <div class="form-group">
-                <label for="inputEmail3" class="col-sm-2 control-label">学号</label>
+                <label for="sno" class="col-sm-2 control-label">学号</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control" id="sno" name="sno" placeholder="学号">
+                  <input type="text" class="form-control" id="sno" name="sno" placeholder="学号" onblur="checkSno(value, 1)" onfocus="removeSnoInfo()">
                 </div>
               </div>
               <div class="form-group">
-                <label for="inputEmail3" class="col-sm-2 control-label">课程编号</label>
+                <label for="cno" class="col-sm-2 control-label">课程编号</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control" id="cno" name="cno" placeholder="课程编号">
+                  <input type="text" class="form-control" id="cno" name="cno" placeholder="课程编号" onblur="checkCno(value)" onfocus="removeCnoInfo()">
                 </div>
               </div>
 
               <div class="form-group">
-                <label for="inputEmail3" class="col-sm-2 control-label">成绩</label>
+                <label for="grade" class="col-sm-2 control-label">成绩</label>
                 <div class="col-sm-10">
                   <input type="text" class="form-control" id="grade" name="grade" placeholder="课程性质">
                 </div>
@@ -59,7 +64,7 @@
 
               <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                  <button type="submit" class="btn btn-primary">添加</button>
+                  <button type="submit" class="btn btn-primary" id="submitBottom">添加</button>
                 </div>
               </div>
             </form>

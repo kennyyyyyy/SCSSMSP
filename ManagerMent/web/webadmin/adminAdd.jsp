@@ -12,21 +12,16 @@
   <base target="rightFrame">
   <meta charset="UTF-8">
   <link rel="stylesheet" href="../bootstrap-3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/errorInfo.css">
   <script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
   <script type="text/javascript" src="../bootstrap-3.4.1/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="../js/jquery.validate.js"></script>
   <script type="text/javascript" src="../js/adminJS/adminAdd.js"></script>
+  <script type="text/javascript" src="../js/adminJS/checkSno.js"></script>
 
 </head>
 <body>
-  <style>
-    span.error{
-      color:red;
-      margin: 2px auto 0;
-      display: block;
-      text-align: center;
-    }
-  </style>
+
   <div>
 
     <div style="float: right">
@@ -42,9 +37,8 @@
         <div class="form-group">
           <label for="sno" class="col-sm-2 control-label">学号</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="sno" name="sno" placeholder="学号" onblur="check(value)" onfocus="removeInfo()">
+            <input type="text" class="form-control" id="sno" name="sno" placeholder="学号" onblur="checkSno(value, 0)" onfocus="removeSnoInfo()">
           </div>
-          <span style="display: block; color: red; text-align: center" >${info }</span>
         </div>
         <div class="form-group">
           <label for="name" class="col-sm-2 control-label">姓名</label>

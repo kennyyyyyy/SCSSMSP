@@ -23,10 +23,18 @@
         <servlet-name>CheckSnoServlet</servlet-name>
         <servlet-class>Control.AdminServlet.CheckSnoServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CheckCnoServlet</servlet-name>
+        <servlet-class>Control.AdminServlet.CheckCnoServlet</servlet-class>
+    </servlet>
 
     <servlet>
         <servlet-name>UploadifyServlet</servlet-name>
         <servlet-class>file.UploadifyServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddScoreServlet</servlet-name>
+        <servlet-class>Control.AdminServlet.AddScoreServlet</servlet-class>
     </servlet>
 
 
@@ -51,10 +59,19 @@
         <url-pattern>/checkSno</url-pattern>
     </servlet-mapping>
 
+    <servlet-mapping>
+        <servlet-name>CheckCnoServlet</servlet-name>
+        <url-pattern>/checkCno</url-pattern>
+    </servlet-mapping>
     <!-- 文件上传 -->
     <servlet-mapping>
         <servlet-name>UploadifyServlet</servlet-name>
         <url-pattern>/fileUpload</url-pattern>
     </servlet-mapping>
 
+    <!--  成绩添加  -->
+    <servlet-mapping>
+        <servlet-name>AddScoreServlet</servlet-name>
+        <url-pattern>/addScore</url-pattern>
+    </servlet-mapping>
 </web-app>

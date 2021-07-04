@@ -1,6 +1,7 @@
 package Dao.impl;
 
 import Bean.Admin;
+import Bean.Score;
 import Bean.Student;
 import Dao.IAdminDao;
 import util.DBConUtil;
@@ -46,7 +47,6 @@ public class IAdminDaoImpl implements IAdminDao {
     public int addStudent(Student student) {
         PreparedStatement pstmt = null;
         Connection conn = null;
-        Admin atp = null;
 
         int i = 0;
 
@@ -75,6 +75,35 @@ public class IAdminDaoImpl implements IAdminDao {
         return i;
     }
 
+    @Override
+    public int addScore(Score score) {
+        PreparedStatement pstmt = null;
+        Connection conn = null;
+
+        int  success = 0;
+
+        try{
+            conn = DBConUtil.getConn();
+
+            String sql = "insert into score(sno, cno, grade) " +
+                    "  values(?,?,?)";
+
+            pstmt = conn.prepareStatement(sql);
+
+            pstmt.setString(1, score.getSno());
+            pstmt.setString(2, score.getCno());
+            pstmt.setInt(3, score.getGrade());
+
+            success = pstmt.executeUpdate();
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            DBConUtil.close(null, pstmt, null);
+        }
+        return success;
+
+    }
+
     /*
     存在为false
     不存在为true
@@ -88,6 +117,7 @@ public class IAdminDaoImpl implements IAdminDao {
         boolean exits = true;
 
         try{
+
             conn = DBConUtil.getConn();
 
             pstmt = conn.prepareStatement(sql);
@@ -107,4 +137,38 @@ public class IAdminDaoImpl implements IAdminDao {
         }
         return exits;
     }
+
+    /*
+    存在为false
+    不存在为true
+     */
+    public boolean checkCno(String cno){
+        PreparedStatement pstmt = null;
+        Connection conn = null;
+        ResultSet rs = null;
+
+        String sql = "select cno from course where cno=?";
+
+        boolean exits = true;
+
+        try{
+            conn = DBConUtil.getConn();
+
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, cno);
+
+            rs = pstmt.executeQuery();
+
+            if(rs.next()){
+                exits = false;
+            }
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            DBConUtil.close( rs, pstmt,null);
+        }
+        return exits;
+    }
+
 }

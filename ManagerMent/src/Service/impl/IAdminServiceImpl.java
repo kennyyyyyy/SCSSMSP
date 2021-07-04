@@ -1,6 +1,7 @@
 package Service.impl;
 
 import Bean.Admin;
+import Bean.Score;
 import Bean.Student;
 import Dao.IAdminDao;
 import Dao.impl.IAdminDaoImpl;
@@ -24,6 +25,21 @@ public class IAdminServiceImpl implements IAdminService {
     @Override
     public boolean checkSno(String sno) {
         return iAdminDao.checkSno(sno);
+    }
+
+    @Override
+    public boolean checkCno(String cno) {
+        return iAdminDao.checkCno(cno);
+    }
+
+    @Override
+    public boolean addCourseSelection() {
+        return false;
+    }
+
+    @Override
+    public boolean addScore(Score score) {
+        return iAdminDao.addScore(score)>0?true:false;
     }
 
 }
