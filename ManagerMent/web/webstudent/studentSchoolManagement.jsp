@@ -40,7 +40,6 @@
             <th width="82px" style="text-align: center">籍贯</th>
             <th width="100px" style="text-align: center">出生日期</th>
             <th width="50px" style="text-align: center">民族</th>
-            <th width="100px" style="text-align: center">毕业时间</th>
             <th  style="text-align: center">电子邮箱</th>
             <th  style="text-align: center">邮政编码</th>
             <th  style="text-align: center">照片</th>
@@ -51,7 +50,6 @@
             <td>湖南郴州</td>
             <td>2001-10-03</td>
             <td>汉族</td>
-            <td>2023-09-11</td>
             <td>2801916353@qq.com</td>
             <td>423000</td>
 
@@ -74,9 +72,7 @@
             <td>
                 <button class="btn btn-primary btn-xs">修改</button>
             </td>
-            <td>
-                <button class="btn btn-primary btn-xs">修改</button>
-            </td>
+
         </tr>
 
     </table>

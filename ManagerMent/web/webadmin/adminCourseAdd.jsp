@@ -38,39 +38,39 @@
     <div class="col-sm-6 col-md-6">
         <form class="form-horizontal" action="register" method="post">
             <div class="form-group">
-                <label for="nickName" class="col-sm-2 control-label">学号</label>
+                <label for="sno" class="col-sm-2 control-label">学号</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="sno" name="sno" placeholder="学号">
                 </div>
             </div>
             <div class="form-group">
-                <label for="name" class="col-sm-2 control-label">课程编号</label>
+                <label for="cno" class="col-sm-2 control-label">课程编号</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="cno" name="cno" placeholder="课程编号">
                 </div>
             </div>
             <div class="form-group">
-                <label for="admission_data" class="col-sm-2 control-label">课程名称</label>
+                <label for="cname" class="col-sm-2 control-label">课程名称</label>
                 <div class="col-sm-10">
                     <input type="password" class="form-control" id="cname" name="cname" placeholder="课程名称">
                 </div>
             </div>
             <div class="form-group">
-                <label for="graduation_data" class="col-sm-2 control-label">开课时间</label>
+                <label for="start_time" class="col-sm-2 control-label">开课时间</label>
                 <div class="col-sm-10">
-                    <input type="password" class="form-control" id="start_time" name="start_time" placeholder="开课时间">
+                    <input type="text" class="form-control" id="start_time" name="start_time" placeholder="开课时间">
                 </div>
             </div>
             <div class="form-group">
-                <label for="major" class="col-sm-2 control-label">课程性质</label>
+                <label for="course_ nature" class="col-sm-2 control-label">课程性质</label>
                 <div class="col-sm-10">
-                    <input type="password" class="form-control" id="course_ naturemajor" name="course_ nature" placeholder="课程性质">
+                    <input type="texxt" class="form-control" id="course_ nature" name="course_ nature" placeholder="课程性质">
                 </div>
             </div>
             <div class="form-group">
-                <label for="id_card" class="col-sm-2 control-label">学分</label>
+                <label for="credits" class="col-sm-2 control-label">学分</label>
                 <div class="col-sm-10">
-                    <input type="password" class="form-control" id="credits" name="credits" placeholder="学分">
+                    <input type="text" class="form-control" id="credits" name="credits" placeholder="学分">
                 </div>
             </div>
 
