@@ -1,4 +1,4 @@
-package Control.AdminServlet;
+package Control.AdminServlet.Import;
 
 import Bean.Score;
 import Service.IAdminService;
@@ -9,9 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
-public class ScoreSearchServlet extends HttpServlet {
+public class ImportScoreServlet extends HttpServlet {
 
     IAdminService iAdminService = new IAdminServiceImpl();
 
@@ -24,19 +23,20 @@ public class ScoreSearchServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
 
-        String searchSno = req.getParameter("searchScoreSno");
-        String searchCno = req.getParameter("searchScoreCno");
+        String sno = req.getParameter("sno");
+        String cno = req.getParameter("cno");
+        String gradetp = req.getParameter("grade");
 
-        req.setAttribute("searchScoreSno", searchSno);
-        req.setAttribute("searchScoreCno", searchCno);
+        double grade = Double.parseDouble(gradetp);
 
-        Score score = new Score(searchSno, searchCno);
+        Score score = new Score(sno, cno, grade);
 
-        List<Score> scoreList = iAdminService.searchScore(score);
+        boolean success = iAdminService.addScore(score);
 
-        req.setAttribute("scoreList", scoreList);
-
-        req.getRequestDispatcher("webadmin/adminGrade.jsp").forward(req, resp);
-
+        if(success){
+            req.getRequestDispatcher("webadmin/adminGrade.jsp").forward(req,resp);
+        }else{
+            req.getRequestDispatcher("webadmin/adminGradeAdd.jsp").forward(req,resp);
+        }
     }
 }

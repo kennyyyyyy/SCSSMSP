@@ -28,49 +28,84 @@
     </style>
 </head>
 <body>
-<div>
-    <div style="float:left;">
-        <form class="form-inline" action="../searchScore">
-            <div class="form-group">
-                <label for="searchScoreSno">学号</label>
-                <input type="text" class="form-control" id="searchScoreSno" name="searchScoreSno" placeholder="${searchScoreSno}">
-            </div>
-            <div class="form-group">
-                <label for="searchScoreCno">课程编号</label>
-                <input type="text" class="form-control" id="searchScoreCno" name="searchScoreCno" placeholder="${searchScoreCno}">
-            </div>
-            <button type="submit" class="btn btn-default">搜索</button>
-        </form>
+    <div>
+        <div style="float:left;">
+            <form class="form-inline" action="../searchScore">
+                <div class="form-group">
+                    <label for="searchScoreSno">学号</label>
+                    <input type="text" class="form-control" id="searchScoreSno" name="searchScoreSno" placeholder="${searchScoreSno}">
+                </div>
+                <div class="form-group">
+                    <label for="searchScoreCno">课程编号</label>
+                    <input type="text" class="form-control" id="searchScoreCno" name="searchScoreCno" placeholder="${searchScoreCno}">
+                </div>
+                <button type="submit" class="btn btn-default">搜索</button>
+            </form>
+        </div>
+
+        <div style="float: right">
+             <a class="btn btn-default active" href="${pageContext.request.contextPath }/webadmin/adminGradeAdd.jsp" role="button">导入学生成绩信息</a>
+        </div>
     </div>
-
-    <div style="float: right">
-        <a class="btn btn-default active" href="${pageContext.request.contextPath }/webadmin/adminGradeModify.jsp" role="button">修改学生成绩信息</a>
-        <a class="btn btn-default active" href="${pageContext.request.contextPath }/webadmin/adminGradeAdd.jsp" role="button">导入学生成绩信息</a>
-    </div>
-</div>
-<div class="middle">
-    <table class="table table-bordered" style=" overflow-x: hidden " >
-        <tr class="success">
-            <th>序号</th>
-            <th>学号</th>
-            <th>课程编号</th>
-            <th>成绩</th>
-
-        </tr>
-
-
-
-
-        <c:forEach items="${scoreList}" var="score" varStatus="status">
+    <div class="middle">
+        <table class="table table-bordered" style=" overflow-x: hidden " >
             <tr class="success">
-                <td>${status.index }</td>
-                <td>${score.sno }</td>
-                <td>${score.cno }</td>
-                <td>${score.grade }</td>
+                <th>序号</th>
+                <th>学号</th>
+                <th>课程编号</th>
+                <th>成绩</th>
+                <th>绩点</th>
+                <th>操作</th>
             </tr>
-        </c:forEach>
-    </table>
-</div>
-<%--      <jsp:include page="webadmin/adminAudit.jsp"></jsp:include>--%>
+
+            <c:forEach items="${scoreList}" var="score" varStatus="status">
+                <tr class="success">
+                    <td>${status.index }</td>
+                    <td>${score.sno }</td>
+                    <td>${score.cno }</td>
+                    <td>${score.grade }</td>
+                    <td>
+                        <c:if test="${score.grade < 60}">
+                            0
+                        </c:if>
+                        <c:if test="${score.grade <= 62 && score.grade >= 60}">
+                            1.0
+                        </c:if>
+                        <c:if test="${score.grade <= 65 && score.grade > 62}">
+                            1.3
+                        </c:if>
+                        <c:if test="${score.grade <= 69 && score.grade > 65}">
+                            1.7
+                        </c:if>
+                        <c:if test="${score.grade <= 72 && score.grade > 69}">
+                            2.0
+                        </c:if>
+                        <c:if test="${score.grade <= 75 && score.grade > 72}">
+                            2.3
+                        </c:if>
+                        <c:if test="${score.grade <= 79 && score.grade > 75}">
+                            2.7
+                        </c:if>
+                        <c:if test="${score.grade <= 82 && score.grade > 79}">
+                            3.0
+                        </c:if>
+                        <c:if test="${score.grade <= 85 && score.grade > 82}">
+                            3.3
+                        </c:if>
+                        <c:if test="${score.grade <= 89 && score.grade > 85}">
+                            3.7
+                        </c:if>
+                        <c:if test="${score.grade <= 100 && score.grade > 89}">
+                            4.0
+                        </c:if>
+                    </td>
+                    <td>
+                        <button class="btn btn-info btn-xs" >修改</button>
+                        <button class="btn btn-primary btn-xs">删除</button>
+                    </td>
+                </tr>
+            </c:forEach>
+        </table>
+    </div>
 </body>
 </html>

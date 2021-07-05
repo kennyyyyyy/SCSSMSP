@@ -1,6 +1,7 @@
 package Service;
 
 import Bean.Admin;
+import Bean.Course;
 import Bean.Score;
 import Bean.Student;
 
@@ -26,6 +27,14 @@ public interface IAdminService {
     检查课程号是否重复
      */
     boolean checkCno(String cno);
+
+    /**
+     * 检查分数规则
+     * @param grade
+     * @return
+     */
+    boolean checkGrade(double grade);
+
     /*
     添加学生选课信息
      */
@@ -36,10 +45,25 @@ public interface IAdminService {
      */
     boolean addScore(Score score);
 
+    /**
+     * 添加课程信息
+     * @param course
+     * @return
+     */
+    boolean addCourse(Course course);
+
     /*
     搜索成绩信息
      */
     List<Score> searchScore(Score score);
+
+    /**
+     * 搜索课程信息
+     * @param course
+     * @return
+     */
+    List<Course> searchCourse(Course course);
+
     /**
      * 根据sno审核用户
      * @param sno

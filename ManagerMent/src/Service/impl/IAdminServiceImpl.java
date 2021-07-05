@@ -1,6 +1,7 @@
 package Service.impl;
 
 import Bean.Admin;
+import Bean.Course;
 import Bean.Score;
 import Bean.Student;
 import Dao.IAdminDao;
@@ -35,6 +36,11 @@ public class IAdminServiceImpl implements IAdminService {
     }
 
     @Override
+    public boolean checkGrade(double grade) {
+        return iAdminDao.checkGrade(grade);
+    }
+
+    @Override
     public boolean addCourseSelection() {
         return false;
     }
@@ -42,6 +48,11 @@ public class IAdminServiceImpl implements IAdminService {
     @Override
     public boolean addScore(Score score) {
         return iAdminDao.addScore(score)>0?true:false;
+    }
+
+    @Override
+    public boolean addCourse(Course course) {
+        return iAdminDao.addCourse(course)>0?true:false;
     }
 
     @Override
@@ -57,6 +68,11 @@ public class IAdminServiceImpl implements IAdminService {
     @Override
     public List<Score> searchScore(Score score) {
         return iAdminDao.searchScore(score);
+    }
+
+    @Override
+    public List<Course> searchCourse(Course course) {
+        return iAdminDao.searchCourse(course);
     }
 
 }

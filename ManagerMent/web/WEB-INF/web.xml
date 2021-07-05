@@ -19,19 +19,25 @@
     <!--  添加学生  -->
     <servlet>
         <servlet-name>ImportStudentServlet</servlet-name>
-        <servlet-class>Control.AdminServlet.ImportStudentServlet</servlet-class>
+        <servlet-class>Control.AdminServlet.Import.ImportStudentServlet</servlet-class>
     </servlet>
 
     <!--  检查学号  -->
     <servlet>
         <servlet-name>CheckSnoServlet</servlet-name>
-        <servlet-class>Control.AdminServlet.CheckSnoServlet</servlet-class>
+        <servlet-class>Control.AdminServlet.AdminCheck.CheckSnoServlet</servlet-class>
     </servlet>
 
     <!--  检查课程编号  -->
     <servlet>
         <servlet-name>CheckCnoServlet</servlet-name>
-        <servlet-class>Control.AdminServlet.CheckCnoServlet</servlet-class>
+        <servlet-class>Control.AdminServlet.AdminCheck.CheckCnoServlet</servlet-class>
+    </servlet>
+
+    <!--  检查成绩范围  -->
+    <servlet>
+        <servlet-name>CheckGradeServlet</servlet-name>
+        <servlet-class>Control.AdminServlet.AdminCheck.CheckGradeServlet</servlet-class>
     </servlet>
 
     <!-- 文件上传 -->
@@ -43,7 +49,7 @@
     <!--  成绩添加  -->
     <servlet>
         <servlet-name>AddScoreServlet</servlet-name>
-        <servlet-class>Control.AdminServlet.AddScoreServlet</servlet-class>
+        <servlet-class>Control.AdminServlet.Import.ImportScoreServlet</servlet-class>
     </servlet>
     <!--  管理员获取学生部分信息  -->
     <servlet>
@@ -54,10 +60,32 @@
     <!--  成绩搜索  -->
     <servlet>
         <servlet-name>SearchScoreServlet</servlet-name>
-        <servlet-class>Control.AdminServlet.ScoreSearchServlet</servlet-class>
+        <servlet-class>Control.AdminServlet.Search.SearchScoreServlet</servlet-class>
     </servlet>
 
+    <!--  成绩首页  -->
+    <servlet>
+        <servlet-name>AdminGradeServlet</servlet-name>
+        <servlet-class>Control.AdminServlet.AdminGradeServlet</servlet-class>
+    </servlet>
 
+    <!--  导入课程信息  -->
+    <servlet>
+        <servlet-name>AdminCourseAddServlet</servlet-name>
+        <servlet-class>Control.AdminServlet.Import.ImportCourseServlet</servlet-class>
+    </servlet>
+
+    <!--  课程信息首页  -->
+    <servlet>
+        <servlet-name>AdminCourseServlet</servlet-name>
+        <servlet-class>Control.AdminServlet.AdminCourseServlet</servlet-class>
+    </servlet>
+
+    <!--  搜索课程信息  -->
+    <servlet>
+        <servlet-name>AdminSearchCourseServlet</servlet-name>
+        <servlet-class>Control.AdminServlet.Search.SearchCourseServlet</servlet-class>
+    </servlet>
 
 
 
@@ -91,6 +119,12 @@
         <url-pattern>/checkCno</url-pattern>
     </servlet-mapping>
 
+    <!--  检查成绩范围  -->
+    <servlet-mapping>
+        <servlet-name>CheckGradeServlet</servlet-name>
+        <url-pattern>/checkGrade</url-pattern>
+    </servlet-mapping>
+
     <!-- 文件上传 -->
     <servlet-mapping>
         <servlet-name>UploadifyServlet</servlet-name>
@@ -114,4 +148,29 @@
         <servlet-name>SearchScoreServlet</servlet-name>
         <url-pattern>/searchScore</url-pattern>
     </servlet-mapping>
+
+    <!--  成绩首页  -->
+    <servlet-mapping>
+        <servlet-name>AdminGradeServlet</servlet-name>
+        <url-pattern>/adminGrade</url-pattern>
+    </servlet-mapping>
+
+    <!--  导入课程信息  -->
+    <servlet-mapping>
+        <servlet-name>AdminCourseAddServlet</servlet-name>
+        <url-pattern>/addCourse</url-pattern>
+    </servlet-mapping>
+
+    <!--  课程信息首页  -->
+    <servlet-mapping>
+        <servlet-name>AdminCourseServlet</servlet-name>
+        <url-pattern>/adminCourse</url-pattern>
+    </servlet-mapping>
+
+    <!--  搜索课程信息  -->
+    <servlet-mapping>
+        <servlet-name>AdminSearchCourseServlet</servlet-name>
+        <url-pattern>/searchCourse</url-pattern>
+    </servlet-mapping>
+
 </web-app>

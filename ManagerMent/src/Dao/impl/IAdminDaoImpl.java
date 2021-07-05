@@ -1,6 +1,7 @@
 package Dao.impl;
 
 import Bean.Admin;
+import Bean.Course;
 import Bean.Score;
 import Bean.Student;
 import Dao.IAdminDao;
@@ -106,6 +107,35 @@ public class IAdminDaoImpl implements IAdminDao {
 
     }
 
+    @Override
+    public int addCourse(Course course) {
+        PreparedStatement pstmt = null;
+        Connection conn = null;
+
+        int  success = 0;
+
+        try{
+            conn = DBConUtil.getConn();
+
+            String sql = "insert into course(cno, cname, course_nature, credits) " +
+                    "  values(?,?,?,?)";
+
+            pstmt = conn.prepareStatement(sql);
+
+            pstmt.setString(1, course.getCno());
+            pstmt.setString(2, course.getCname());
+            pstmt.setDouble(3, course.getCourseNature());
+            pstmt.setDouble(4, course.getCredits());
+
+            success = pstmt.executeUpdate();
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            DBConUtil.close(null, pstmt, null);
+        }
+        return success;
+    }
+
     /*
     存在为false
     不存在为true
@@ -171,6 +201,11 @@ public class IAdminDaoImpl implements IAdminDao {
             DBConUtil.close( rs, pstmt,null);
         }
         return exits;
+    }
+
+    @Override
+    public boolean checkGrade(double grade) {
+       return (grade>=0 && grade <=100);
     }
 
     @Override
@@ -250,6 +285,50 @@ public class IAdminDaoImpl implements IAdminDao {
             DBConUtil.close(rs, pstmt, null);
         }
         return scoreList;
+    }
+
+    @Override
+    public List<Course> searchCourse(Course course) {
+        PreparedStatement pstmt = null;
+        Connection conn = null;
+        ResultSet rs = null;
+        List<Course> courseList = new ArrayList<>();
+
+        try{
+            conn = DBConUtil.getConn();
+
+            String sql = "select cno, cname, course_nature, credits from course where cno like '%' ? '%' or cname like '%' ? '%' or course_nature like '%' ? '%' or credits like '%' ? '%'";
+
+            pstmt = conn.prepareStatement(sql);
+
+            int cn = course.getCourseNature();
+
+            System.out.println(course.getSearchInfo() + "100");
+
+            pstmt.setString(1, course.getSearchInfo());
+            pstmt.setString(2, course.getSearchInfo());
+            if(cn != 3){
+                pstmt.setInt(3, course.getCourseNature());
+            }
+            pstmt.setString(4, course.getSearchInfo());
+
+
+            rs = pstmt.executeQuery();
+
+            while(rs.next()){
+                Course coursetp = new Course();
+                coursetp.setCno(rs.getString("cno"));
+                coursetp.setCname(rs.getString("cname"));
+                coursetp.setCourseNature(rs.getInt("course_nature"));
+                coursetp.setCredits(rs.getDouble("credits"));
+                courseList.add(coursetp);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            DBConUtil.close(rs, pstmt, null);
+        }
+        return courseList;
     }
 
 }

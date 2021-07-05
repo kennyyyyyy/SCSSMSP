@@ -1,4 +1,4 @@
-package Control.AdminServlet;
+package Control.AdminServlet.AdminCheck;
 
 import Service.IAdminService;
 import Service.impl.IAdminServiceImpl;
@@ -8,9 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 
-public class CheckCnoServlet extends HttpServlet {
+public class CheckGradeServlet extends HttpServlet {
 
     IAdminService iAdminService = new IAdminServiceImpl();
 
@@ -23,11 +22,10 @@ public class CheckCnoServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
 
-        String cno = req.getParameter("cno");
+        double grade = Double.parseDouble(req.getParameter("grade"));
 
-        boolean exits = iAdminService.checkCno(cno);
+        boolean legal = iAdminService.checkGrade(grade);
 
-        PrintWriter writer = resp.getWriter();
-        writer.print(exits);
+        resp.getWriter().print(legal);
     }
 }

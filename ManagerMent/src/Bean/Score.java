@@ -5,7 +5,9 @@ public class Score {
     private String cno;
     private double grade;
 
-    public Score(){}
+    public Score(){
+        this("", "");
+    }
 
     public Score(String sno){
         this.sno = sno;

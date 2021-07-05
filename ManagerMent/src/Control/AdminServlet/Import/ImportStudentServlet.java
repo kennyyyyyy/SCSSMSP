@@ -1,4 +1,4 @@
-package Control.AdminServlet;
+package Control.AdminServlet.Import;
 
 import Bean.Student;
 import Service.IAdminService;

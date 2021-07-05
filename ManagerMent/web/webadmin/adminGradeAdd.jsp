@@ -19,6 +19,8 @@
   <script type="text/javascript" src="../js/adminJS/adminGradeAdd.js"></script>
   <script type="text/javascript" src="../js/adminJS/checkSno.js"></script>
   <script type="text/javascript" src="../js/adminJS/checkCno.js"></script>
+  <script type="text/javascript" src="../js/adminJS/checkGrade.js"></script>
+
   <style>
     /*  body {
         font-family:Verdana;
@@ -30,48 +32,50 @@
   </style>
 </head>
 <body>
-<div>
-   <div>
-        <div style="float: right">
-        <a class="btn btn-default active" href="adminGradeModify.jsp" role="button">修改学生成绩信息</a>
-        <a class="btn btn-default active" href="adminGradeAdd.jsp" role="button">导入学生成绩信息</a>
-        </div>
-   </div>
-        <div class="row">
-          <div class="col-sm-6 col-md-3">
-          </div>
-          <div class="col-sm-6 col-md-6">
-            <form class="form-horizontal" action="../addScore" method="post"  id="addForm">
-              <div class="form-group">
-                <label for="sno" class="col-sm-2 control-label">学号</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" id="sno" name="sno" placeholder="学号" onblur="checkSno(value, 1)" onfocus="removeSnoInfo()">
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="cno" class="col-sm-2 control-label">课程编号</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" id="cno" name="cno" placeholder="课程编号" onblur="checkCno(value)" onfocus="removeCnoInfo()">
-                </div>
-              </div>
+<div class="container-fluid">
 
-              <div class="form-group">
-                <label for="grade" class="col-sm-2 control-label">成绩</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" id="grade" name="grade" placeholder="成绩">
-                </div>
-              </div>
+    <div style="float: right">
+      <a class="btn btn-default active" href="../adminGrade" role="button">返回</a>
+    </div>
 
-              <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                  <button type="submit" class="btn btn-primary" id="submitBottom">添加</button>
-                </div>
-              </div>
-            </form>
+    <div class="clearfix"></div>
+
+    <div class="row">
+      <div class="col-sm-6 col-md-3">
+      </div>
+      <div class="col-sm-6 col-md-6">
+        <form class="form-horizontal" action="../addScore" method="post"  id="addForm">
+          <div class="form-group">
+            <label for="sno" class="col-sm-2 control-label">学号</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="sno" name="sno" placeholder="学号" onblur="checkSno(value, 1)" onfocus="removeSnoInfo()">
+            </div>
           </div>
-          <div class="col-sm-6 col-md-3">
+          <div class="form-group">
+            <label for="cno" class="col-sm-2 control-label">课程编号</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="cno" name="cno" placeholder="课程编号" onblur="checkCno(value, 1)" onfocus="removeCnoInfo()">
+            </div>
           </div>
-        </div>
+
+          <div class="form-group">
+            <label for="grade" class="col-sm-2 control-label">成绩</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="grade" name="grade" placeholder="成绩" onblur="checkGrade(value)" onfocus="removeGradeInfo()">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-primary" id="submitBottom">添加</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-sm-6 col-md-3">
+      </div>
+    </div>
+
 </div>
 </body>
 </html>

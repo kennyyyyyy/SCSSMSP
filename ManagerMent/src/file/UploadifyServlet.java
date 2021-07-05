@@ -1,4 +1,3 @@
-/*
 package file;
 
 import java.io.File;
@@ -76,4 +75,4 @@ public class UploadifyServlet extends HttpServlet {
 	}
 
 }
-*/
+
