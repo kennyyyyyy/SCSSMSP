@@ -87,6 +87,24 @@
         <servlet-class>Control.AdminServlet.Search.SearchCourseServlet</servlet-class>
     </servlet>
 
+    <!--  管理员审核  -->
+    <servlet>
+        <servlet-name>AdminStatusServlet</servlet-name>
+        <servlet-class>Control.AdminServlet.AdminStatusServlet</servlet-class>
+    </servlet>
+
+    <!--  管理员修改  -->
+    <servlet>
+        <servlet-name>AdminUpdateServlet</servlet-name>
+        <servlet-class>Control.AdminServlet.AdminUpdateServlet</servlet-class>
+    </servlet>
+
+    <!--  管理员重置密码  -->
+    <servlet>
+        <servlet-name>AdminResetPwdServlet</servlet-name>
+        <servlet-class>Control.AdminServlet.AdminResetPwdServlet</servlet-class>
+    </servlet>
+
 
 
     <!--  登录  -->
@@ -173,4 +191,22 @@
         <url-pattern>/searchCourse</url-pattern>
     </servlet-mapping>
 
+
+    <!--  管理员审核  -->
+    <servlet-mapping>
+        <servlet-name>AdminStatusServlet</servlet-name>
+        <url-pattern>/status</url-pattern>
+    </servlet-mapping>
+
+    <!--  管理员修改  -->
+    <servlet-mapping>
+        <servlet-name>AdminUpdateServlet</servlet-name>
+        <url-pattern>/update</url-pattern>
+    </servlet-mapping>
+
+    <!--  管理员重置密码  -->
+    <servlet-mapping>
+        <servlet-name>AdminResetPwdServlet</servlet-name>
+        <url-pattern>/reset</url-pattern>
+    </servlet-mapping>
 </web-app>

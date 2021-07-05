@@ -77,4 +77,19 @@ public interface IAdminService {
      */
     List<Student> getStudentListByAdmin();
 
+    /**
+     * 根据sno修改学生的sex,sname,admission_data,graduation_data,major
+     * @param sno,sex,sname,admission_data,graduation_data,major
+     * @return boolean true:success
+     */
+    public boolean updateAllByAdmin(String sno, int sex, String sname, String admission_data, String graduation_data, String major);
+
+
+    /**
+     * 根据sno重置密码
+     * @param sno
+     * @return boolean true:success
+     */
+    public boolean resetPwdByAdmin(String sno);
+
 }

@@ -57,12 +57,25 @@ public class IAdminServiceImpl implements IAdminService {
 
     @Override
     public boolean updateStatusByAdmin(String sno) {
-        return false;
+        int i = iAdminDao.updateStatusByAdmin(sno);
+        return i > 0 ? true:false;
     }
 
     @Override
     public List<Student> getStudentListByAdmin() {
         return iAdminDao.getStudentListByAdmin();
+    }
+
+    @Override
+    public boolean updateAllByAdmin(String sno, int sex, String sname, String admission_data, String graduation_data, String major) {
+        int i = iAdminDao.updateAllByAdmin(sno, sex, sname, admission_data, graduation_data, major);
+        return i > 0 ? true:false;
+    }
+
+    @Override
+    public boolean resetPwdByAdmin(String sno) {
+        int i = iAdminDao.resetPwdByAdmin(sno);
+        return i > 0 ? true:false;
     }
 
     @Override
