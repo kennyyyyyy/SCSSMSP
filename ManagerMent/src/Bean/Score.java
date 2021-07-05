@@ -3,10 +3,20 @@ package Bean;
 public class Score {
     private String sno;
     private String cno;
+    private double grade;
 
     public Score(){}
 
-    public Score(String sno, String cno, int grade) {
+    public Score(String sno){
+        this.sno = sno;
+    }
+
+    public Score(String sno, String cno){
+        this.sno = sno;
+        this.cno = cno;
+    }
+
+    public Score(String sno, String cno, double grade) {
         this.sno = sno;
         this.cno = cno;
         this.grade = grade;
@@ -28,14 +38,12 @@ public class Score {
         this.cno = cno;
     }
 
-    public int getGrade() {
+    public double getGrade() {
         return grade;
     }
 
-    public void setGrade(int grade) {
+    public void setGrade(double grade) {
         this.grade = grade;
     }
-
-    private int grade;
 
 }

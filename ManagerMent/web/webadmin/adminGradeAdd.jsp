@@ -58,7 +58,7 @@
               <div class="form-group">
                 <label for="grade" class="col-sm-2 control-label">成绩</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control" id="grade" name="grade" placeholder="课程性质">
+                  <input type="text" class="form-control" id="grade" name="grade" placeholder="成绩">
                 </div>
               </div>
 

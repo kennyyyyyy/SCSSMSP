@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface IAdminService {
     /*
-    管理眼登录
+    管理员登录
      */
     Admin login(Admin admin);
 
@@ -36,17 +36,21 @@ public interface IAdminService {
      */
     boolean addScore(Score score);
 
+    /*
+    搜索成绩信息
+     */
+    List<Score> searchScore(Score score);
     /**
      * 根据sno审核用户
      * @param sno
      * @return boolean true:success
      */
-    public boolean updateStatusByAdmin(String sno);
+    boolean updateStatusByAdmin(String sno);
 
     /**
      * 管理员获取学生部分信息
      * @return List<Student>
      */
-    public List<Student> getStudentListByAdmin();
+    List<Student> getStudentListByAdmin();
 
 }

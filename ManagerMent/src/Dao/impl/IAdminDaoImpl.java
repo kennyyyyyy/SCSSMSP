@@ -94,7 +94,7 @@ public class IAdminDaoImpl implements IAdminDao {
 
             pstmt.setString(1, score.getSno());
             pstmt.setString(2, score.getCno());
-            pstmt.setInt(3, score.getGrade());
+            pstmt.setDouble(3, score.getGrade());
 
             success = pstmt.executeUpdate();
         }catch (Exception e){
@@ -216,6 +216,40 @@ public class IAdminDaoImpl implements IAdminDao {
             DBConUtil.close(rs,pstmt,null);
         }
         return list;
+    }
+
+    @Override
+    public List<Score> searchScore(Score score) {
+        PreparedStatement pstmt = null;
+        Connection conn = null;
+        ResultSet rs = null;
+        List<Score> scoreList = new ArrayList<>();
+
+        try{
+            conn = DBConUtil.getConn();
+
+            String sql = "select sno,cno,grade from score where sno like '%' ? '%' and cno like '%' ? '%'";
+
+            pstmt = conn.prepareStatement(sql);
+
+            pstmt.setString(1, score.getSno());
+            pstmt.setString(2, score.getCno());
+
+            rs = pstmt.executeQuery();
+
+            while(rs.next()){
+                Score scoretp = new Score();
+                scoretp.setSno(rs.getString("sno"));
+                scoretp.setCno(rs.getString("cno"));
+                scoretp.setGrade(rs.getDouble("grade"));
+                scoreList.add(scoretp);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            DBConUtil.close(rs, pstmt, null);
+        }
+        return scoreList;
     }
 
 }

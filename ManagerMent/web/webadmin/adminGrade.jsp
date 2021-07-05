@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: ASUS
@@ -29,34 +30,45 @@
 <body>
 <div>
     <div style="float:left;">
-        <form class="form-inline" >
+        <form class="form-inline" action="../searchScore">
             <div class="form-group">
-                <label for="exampleInputName2">学号</label>
-                <input type="text" class="form-control" id="exampleInputName2" placeholder="请输入学号">
+                <label for="searchScoreSno">学号</label>
+                <input type="text" class="form-control" id="searchScoreSno" name="searchScoreSno" placeholder="${searchScoreSno}">
+            </div>
+            <div class="form-group">
+                <label for="searchScoreCno">课程编号</label>
+                <input type="text" class="form-control" id="searchScoreCno" name="searchScoreCno" placeholder="${searchScoreCno}">
             </div>
             <button type="submit" class="btn btn-default">搜索</button>
         </form>
     </div>
 
     <div style="float: right">
-        <a class="btn btn-default active" href="adminGradeModify.jsp" role="button">修改学生成绩信息</a>
-        <a class="btn btn-default active" href="adminGradeAdd.jsp" role="button">导入学生成绩信息</a>
+        <a class="btn btn-default active" href="${pageContext.request.contextPath }/webadmin/adminGradeModify.jsp" role="button">修改学生成绩信息</a>
+        <a class="btn btn-default active" href="${pageContext.request.contextPath }/webadmin/adminGradeAdd.jsp" role="button">导入学生成绩信息</a>
     </div>
 </div>
 <div class="middle">
     <table class="table table-bordered" style=" overflow-x: hidden " >
         <tr class="success">
-            <th width="125px" style="text-align: center">学号</th>
-            <th width="85px" style="text-align: center">课程编号</th>
-            <th width="25px" style="text-align: center">成绩</th>
+            <th>序号</th>
+            <th>学号</th>
+            <th>课程编号</th>
+            <th>成绩</th>
 
         </tr>
-        <tr class="success">
-            <td>201908010327</td>
-            <td>12345</td>
-            <td>88</td>
-        </tr>
-        </tr>
+
+
+
+
+        <c:forEach items="${scoreList}" var="score" varStatus="status">
+            <tr class="success">
+                <td>${status.index }</td>
+                <td>${score.sno }</td>
+                <td>${score.cno }</td>
+                <td>${score.grade }</td>
+            </tr>
+        </c:forEach>
     </table>
 </div>
 <%--      <jsp:include page="webadmin/adminAudit.jsp"></jsp:include>--%>

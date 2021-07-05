@@ -54,4 +54,9 @@ public class IAdminServiceImpl implements IAdminService {
         return iAdminDao.getStudentListByAdmin();
     }
 
+    @Override
+    public List<Score> searchScore(Score score) {
+        return iAdminDao.searchScore(score);
+    }
+
 }

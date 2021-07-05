@@ -1,20 +1,17 @@
 package Control.AdminServlet;
 
 import Bean.Score;
-import Dao.IAdminDao;
-import Dao.impl.IAdminDaoImpl;
 import Service.IAdminService;
 import Service.impl.IAdminServiceImpl;
-import jdk.nashorn.internal.runtime.Scope;
-import org.omg.CORBA.INTERNAL;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
-public class AddScoreServlet extends HttpServlet {
+public class ScoreSearchServlet extends HttpServlet {
 
     IAdminService iAdminService = new IAdminServiceImpl();
 
@@ -27,20 +24,19 @@ public class AddScoreServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
 
-        String sno = req.getParameter("sno");
-        String cno = req.getParameter("cno");
-        String gradetp = req.getParameter("grade");
+        String searchSno = req.getParameter("searchScoreSno");
+        String searchCno = req.getParameter("searchScoreCno");
 
-        double grade = Double.parseDouble(gradetp);
+        req.setAttribute("searchScoreSno", searchSno);
+        req.setAttribute("searchScoreCno", searchCno);
 
-        Score score = new Score(sno, cno, grade);
+        Score score = new Score(searchSno, searchCno);
 
-        boolean success = iAdminService.addScore(score);
+        List<Score> scoreList = iAdminService.searchScore(score);
 
-        if(success){
-            req.getRequestDispatcher("webadmin/adminGrade.jsp").forward(req,resp);
-        }else{
-            req.getRequestDispatcher("webadmin/adminGradeAdd.jsp").forward(req,resp);
-        }
+        req.setAttribute("scoreList", scoreList);
+
+        req.getRequestDispatcher("webadmin/adminGrade.jsp").forward(req, resp);
+
     }
 }

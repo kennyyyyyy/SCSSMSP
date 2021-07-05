@@ -4,34 +4,43 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
+    <!--  登录  -->
     <servlet>  	
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>Control.LoginServlet</servlet-class>
     </servlet>
 
+    <!--  登出  -->
     <servlet>
         <servlet-name>LoginOutServlet</servlet-name>
         <servlet-class>Control.LoginOutServlet</servlet-class>
     </servlet>
 
+    <!--  添加学生  -->
     <servlet>
         <servlet-name>ImportStudentServlet</servlet-name>
         <servlet-class>Control.AdminServlet.ImportStudentServlet</servlet-class>
     </servlet>
 
+    <!--  检查学号  -->
     <servlet>
         <servlet-name>CheckSnoServlet</servlet-name>
         <servlet-class>Control.AdminServlet.CheckSnoServlet</servlet-class>
     </servlet>
+
+    <!--  检查课程编号  -->
     <servlet>
         <servlet-name>CheckCnoServlet</servlet-name>
         <servlet-class>Control.AdminServlet.CheckCnoServlet</servlet-class>
     </servlet>
 
+    <!-- 文件上传 -->
     <servlet>
         <servlet-name>UploadifyServlet</servlet-name>
         <servlet-class>file.UploadifyServlet</servlet-class>
     </servlet>
+
+    <!--  成绩添加  -->
     <servlet>
         <servlet-name>AddScoreServlet</servlet-name>
         <servlet-class>Control.AdminServlet.AddScoreServlet</servlet-class>
@@ -42,34 +51,46 @@
         <servlet-class>Control.AdminServlet.AdminAuditServlet</servlet-class>
     </servlet>
 
+    <!--  成绩搜索  -->
+    <servlet>
+        <servlet-name>SearchScoreServlet</servlet-name>
+        <servlet-class>Control.AdminServlet.ScoreSearchServlet</servlet-class>
+    </servlet>
 
 
 
 
+
+    <!--  登录  -->
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
 
+    <!--  登出  -->
     <servlet-mapping>
         <servlet-name>LoginOutServlet</servlet-name>
         <url-pattern>/loginOut</url-pattern>
     </servlet-mapping>
 
+    <!--  添加学生  -->
     <servlet-mapping>
         <servlet-name>ImportStudentServlet</servlet-name>
         <url-pattern>/import</url-pattern>
     </servlet-mapping>
 
+    <!--  检查学号  -->
     <servlet-mapping>
         <servlet-name>CheckSnoServlet</servlet-name>
         <url-pattern>/checkSno</url-pattern>
     </servlet-mapping>
 
+    <!--  检查课程编号  -->
     <servlet-mapping>
         <servlet-name>CheckCnoServlet</servlet-name>
         <url-pattern>/checkCno</url-pattern>
     </servlet-mapping>
+
     <!-- 文件上传 -->
     <servlet-mapping>
         <servlet-name>UploadifyServlet</servlet-name>
@@ -86,5 +107,11 @@
     <servlet-mapping>
         <servlet-name>AdminAuditServlet</servlet-name>
         <url-pattern>/adminAudit</url-pattern>
+    </servlet-mapping>
+
+    <!--  成绩搜索  -->
+    <servlet-mapping>
+        <servlet-name>SearchScoreServlet</servlet-name>
+        <url-pattern>/searchScore</url-pattern>
     </servlet-mapping>
 </web-app>

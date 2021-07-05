@@ -21,11 +21,13 @@ public interface IAdminDao {
      * @param sno
      * @return boolean true:success
      */
-    public int updateStatusByAdmin(String sno);
+    int updateStatusByAdmin(String sno);
 
     /**
      * 管理员获取学生部分信息
      * @return List<Student>
      */
-    public List<Student> getStudentListByAdmin();
+    List<Student> getStudentListByAdmin();
+
+    List<Score> searchScore(Score score);
 }
