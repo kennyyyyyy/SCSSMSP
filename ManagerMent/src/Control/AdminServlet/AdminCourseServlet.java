@@ -24,13 +24,7 @@ public class AdminCourseServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
 
-        String info = req.getParameter("searchScoreSno");
-        String course_nature = req.getParameter("inputCN");
-        int cn = Integer.parseInt(course_nature);
-
         Course course = new Course();
-        course.setSearchInfo(info); //临时储存搜索信息
-        course.setCourseNature(cn);
 
         List<Course> courseList = iAdminService.searchCourse(course);
 

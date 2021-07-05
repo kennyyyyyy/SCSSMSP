@@ -49,7 +49,7 @@
             </div>
 
             <div style="float: right">
-                <a class="btn btn-default active" href="adminCourseAdd.jsp" role="button">导入课程信息</a>
+                <a class="btn btn-default active" href="${pageContext.request.contextPath}/webadmin/adminCourseAdd.jsp" role="button">导入课程信息</a>
             </div>
         </div>
         <div class="middle">
@@ -67,7 +67,17 @@
                         <td>${status.index }</td>
                         <td>${course.cno }</td>
                         <td>${course.cname }</td>
-                        <td>${course.course_nature }</td>
+                        <td>
+                            <c:if test="${course.courseNature == 0}">
+                                公共课
+                            </c:if>
+                            <c:if test="${course.courseNature == 1}">
+                                选修课
+                            </c:if>
+                            <c:if test="${course.courseNature == 2}">
+                                专业课
+                            </c:if>
+                        </td>
                         <td>${course.credits }</td>
                         <td>
                             <button class="btn btn-info btn-xs" >修改</button>

@@ -149,8 +149,7 @@
     <div>
       <div style="float: right">
         <%--   显示未审核学生信息   --%>
-        <a class="btn btn-default active" href="adminAudit.jsp" role="button">审核学生信息</a>
-        <a class="btn btn-default active" href="adminAdd.jsp" role="button">导入学生信息</a>
+        <a class="btn btn-default active" href="${pageContext.request.contextPath}/webadmin/adminAdd.jsp" role="button">导入学生信息</a>
       </div>
     </div>
         <table class="table table-bordered" style=" overflow-x: hidden" >

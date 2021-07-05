@@ -31,7 +31,7 @@
 <body>
     <div class="container-fluid">
         <div style="float: right">
-            <a class="btn btn-default active" href="adminCourse.jsp" role="button">返回</a>
+            <a class="btn btn-default active" href="${pageContext.request.contextPath}/webadmin/adminCourse.jsp" role="button">返回</a>
         </div>
         <div class="clearfix"></div>
 

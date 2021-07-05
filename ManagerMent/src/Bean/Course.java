@@ -15,7 +15,10 @@ public class Course {
         this.credits = credits;
     }
 
-    public Course(){}
+    public Course(){
+        this.searchInfo = "";
+        this.courseNature = 3;
+    }
 
     public Course(String searchInfo, int courseNature){
         this.courseNature = courseNature;

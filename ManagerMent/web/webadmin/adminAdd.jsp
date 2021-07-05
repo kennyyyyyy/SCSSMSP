@@ -25,8 +25,7 @@
   <div>
 
     <div style="float: right">
-      <a class="btn btn-default active" href="adminAudit.jsp" role="button">审核学生信息</a>
-      <a class="btn btn-default active" href="adminGradeAdd.jsp" role="button">导入学生信息</a>
+      <a class="btn btn-default active" href="${pageContext.request.contextPath}/webadmin/adminAudit.jsp" role="button">返回</a>
     </div>
   </div>
   <div class="row">

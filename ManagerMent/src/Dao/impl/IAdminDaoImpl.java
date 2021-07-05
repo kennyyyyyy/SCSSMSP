@@ -297,21 +297,24 @@ public class IAdminDaoImpl implements IAdminDao {
         try{
             conn = DBConUtil.getConn();
 
-            String sql = "select cno, cname, course_nature, credits from course where cno like '%' ? '%' or cname like '%' ? '%' or course_nature like '%' ? '%' or credits like '%' ? '%'";
+            String sql = "select cno, cname, course_nature, credits from course where (cno like ? or cname like ? or credits like ?) and course_nature like ?";
 
             pstmt = conn.prepareStatement(sql);
 
+            String info  = course.getSearchInfo();
+            info = info.trim();
+            info = "%" + info + "%";
+
             int cn = course.getCourseNature();
 
-            System.out.println(course.getSearchInfo() + "100");
-
-            pstmt.setString(1, course.getSearchInfo());
-            pstmt.setString(2, course.getSearchInfo());
-            if(cn != 3){
-                pstmt.setInt(3, course.getCourseNature());
+            pstmt.setString(1, info);
+            pstmt.setString(2, info);
+            pstmt.setString(3, info);
+            if(cn == 3){
+                pstmt.setString(4, "%%");
+            }else{
+                pstmt.setString(4, Integer.toString(cn));
             }
-            pstmt.setString(4, course.getSearchInfo());
-
 
             rs = pstmt.executeQuery();
 

@@ -25,7 +25,11 @@ public class SearchCourseServlet extends HttpServlet {
 
         String info = req.getParameter("inputInfo");
         String course_nature = req.getParameter("inputCN");
+
+
         int cn = Integer.parseInt(course_nature);
+
+        System.out.println(cn);
 
         req.setAttribute("inputInfo", info);
 

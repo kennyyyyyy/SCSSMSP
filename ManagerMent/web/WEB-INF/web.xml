@@ -191,7 +191,6 @@
         <url-pattern>/searchCourse</url-pattern>
     </servlet-mapping>
 
-
     <!--  管理员审核  -->
     <servlet-mapping>
         <servlet-name>AdminStatusServlet</servlet-name>
