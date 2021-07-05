@@ -36,6 +36,13 @@
         <servlet-name>AddScoreServlet</servlet-name>
         <servlet-class>Control.AdminServlet.AddScoreServlet</servlet-class>
     </servlet>
+    <!--  管理员获取学生部分信息  -->
+    <servlet>
+        <servlet-name>AdminAuditServlet</servlet-name>
+        <servlet-class>Control.AdminServlet.AdminAuditServlet</servlet-class>
+    </servlet>
+
+
 
 
 
@@ -73,5 +80,11 @@
     <servlet-mapping>
         <servlet-name>AddScoreServlet</servlet-name>
         <url-pattern>/addScore</url-pattern>
+    </servlet-mapping>
+
+    <!--  管理员获取学生部分信息  -->
+    <servlet-mapping>
+        <servlet-name>AdminAuditServlet</servlet-name>
+        <url-pattern>/adminAudit</url-pattern>
     </servlet-mapping>
 </web-app>

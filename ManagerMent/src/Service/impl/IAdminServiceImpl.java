@@ -7,6 +7,8 @@ import Dao.IAdminDao;
 import Dao.impl.IAdminDaoImpl;
 import Service.IAdminService;
 
+import java.util.List;
+
 
 public class IAdminServiceImpl implements IAdminService {
 
@@ -40,6 +42,16 @@ public class IAdminServiceImpl implements IAdminService {
     @Override
     public boolean addScore(Score score) {
         return iAdminDao.addScore(score)>0?true:false;
+    }
+
+    @Override
+    public boolean updateStatusByAdmin(String sno) {
+        return false;
+    }
+
+    @Override
+    public List<Student> getStudentListByAdmin() {
+        return iAdminDao.getStudentListByAdmin();
     }
 
 }

@@ -9,6 +9,8 @@ import util.DBConUtil;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 public class IAdminDaoImpl implements IAdminDao {
 
@@ -169,6 +171,51 @@ public class IAdminDaoImpl implements IAdminDao {
             DBConUtil.close( rs, pstmt,null);
         }
         return exits;
+    }
+
+    @Override
+    public int updateStatusByAdmin(String sno) {
+        Connection conn = DBConUtil.getConn();
+        PreparedStatement pstmt = null;
+        String sql = "update student set status = 1 where sno = ? ";
+        int i = 0;
+        try {
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1,sno);
+            i = pstmt.executeUpdate();
+        }catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            DBConUtil.close(null, pstmt, null);
+        }
+        return i;
+    }
+
+    @Override
+    public List<Student> getStudentListByAdmin() {
+        Connection conn = DBConUtil.getConn();
+        ResultSet rs = null;
+        PreparedStatement pstmt = null;
+        String sql = "SELECT sno,sex,sname,admission_data,graduation_data,major,status FROM student ";
+        List<Student> list = null;
+        try {
+            pstmt = conn.prepareStatement(sql);
+            rs = pstmt.executeQuery();
+            list = new ArrayList<Student>();
+            while (rs.next()) {
+                Student temp = new Student(rs.getString("sno"),rs.getInt("sex"), rs.getString("sname"),
+                                           rs.getString("admission_data"),rs.getString("graduation_data"),rs.getString("major") ,
+                        rs.getInt("status"));
+                list.add(temp);
+            }
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            DBConUtil.close(rs,pstmt,null);
+        }
+        return list;
     }
 
 }

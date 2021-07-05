@@ -15,6 +15,17 @@ public class Student {
     private String email;
     private String postal_code;
     private String password;
+    private int status;
+
+    public Student(String sno, int sex, String sname, String admission_data, String  graduation_data, String major, int status) {
+        this.sno = sno;
+        this.sex = sex;
+        this.sname = sname;
+        this.admission_data = admission_data;
+        this.graduation_data = graduation_data;
+        this.major = major;
+        this.status = status;
+    }
 
     public Student(String sno, int sex, String sname, String place, String data, String national, String admission_data, int graduation_flag, String graduation_data, String major, String id_card, String email, String postal_code, String password) {
         this.sno = sno;
@@ -163,6 +174,14 @@ public class Student {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
     }
 
 

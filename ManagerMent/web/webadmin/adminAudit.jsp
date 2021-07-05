@@ -15,6 +15,44 @@
   <link rel="stylesheet" href="../bootstrap-3.4.1/css/bootstrap.min.css">
   <script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
   <script type="text/javascript" src="../bootstrap-3.4.1/js/bootstrap.min.js"></script>
+    <!--jquery提示筐插件-->
+    <link rel="stylesheet" href="../toastr/toastr.css">
+    <script type="text/javascript" src="../toastr/toastr.js"></script>
+    <script>
+        toastr.options = {"timeOut":1000};
+        var eml = 0;
+        var obj = null;
+        //jquery ready函数
+        $(function (){
+            $('#ok').click(function (){
+
+                $.ajax({
+                    url:"status",//请求的url地址
+                    type:"post",//请求方式
+                    candidateType:"json",//json传输格式
+                    async:true,//是否异步传输
+                    data:"eml="+eml,//传入的参数
+                    success:function (data){ //接受服务端响应的数据
+                        if (data == 1) {
+                            //审核成功：1把当前的对话框关闭 2 把审核按钮变成审核文字
+                            $(obj).parent().html("  <span style='color: red;'>已审核&nbsp;</span>");
+                            toastr.success("审核成功");
+                        }else {
+                            //审核失败： 1关闭对话框 2 提示用户审核失败
+                            toastr.warning("服务器异常，审核失败");
+                        }
+                        $('#myModal').modal('hide');
+                    }
+                })
+            })
+        })
+
+        function showd(eml_, obj_) {
+            eml = eml_;
+            obj = obj_;
+            $('#myModal').modal('show');
+        }
+    </script>
   <style>
     td{
       text-align: center;
@@ -45,26 +83,57 @@
             <th  style="text-align: center">操作</th>
 
           </tr>
+<c:forEach items="${list }" var="student">
           <tr class="success">
-            <td>201908010327</td>
-            <td>男</td>
-            <td>数次</td>
-
-            <td>2019-09-11</td>
-            <td>2023-09-11</td>
-            <td>计算机科学与技术</td>
+            <td>${student.sno}</td>
+            <td>${student.sex}</td>
+            <td>${student.sname}</td>
+            <td>${student.admission_data}</td>
+            <td>${student.graduation_data}</td>
+            <td>${student.major}</td>
 
             <td>
-                <span>
-                    <button class="btn btn-info btn-xs" >审核</button>
-                </span>
-              <button class="btn btn-primary btn-xs">修改</button>
+              <c:if test="${student.status==1}">
+                <span style="color: red;">已审核&nbsp;</span>
+              </c:if>
+              <c:if test="${student.status==0}">
+                    <span>
+                        <button class="btn btn-info btn-xs" onclick="showd('${student.sno}', this)">审核</button>
+                    </span>
+                &nbsp;&nbsp;
+              </c:if>
+              <span>
+                        <button class="btn btn-info btn-xs" onclick="show2('${studnt.sno}', this)">修改</button>
+                    </span>
+
             </td>
           </tr>
-          </tr>
+</c:forEach>
         </table>
       </div>
 
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+    Launch demo modal
+    </button>
 
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <h4 class="modal-title" id="myModalLabel">温馨提示</h4>
+    </div>
+    <div class="modal-body">
+    是否审核通过
+    </div>
+
+    <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+    <button type="button" class="btn btn-primary" id="ok">通过</button>
+    </div>
+    </div>
+    </div>
+    </div>
 </body>
 </html>
