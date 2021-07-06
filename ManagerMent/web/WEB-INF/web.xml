@@ -105,6 +105,25 @@
         <servlet-class>Control.AdminServlet.AdminResetPwdServlet</servlet-class>
     </servlet>
 
+    <!--  管理员删除成绩  -->
+    <servlet>
+        <servlet-name>DeleteByAdminServlet</servlet-name>
+        <servlet-class>Control.AdminServlet.DeleteByAdminServlet</servlet-class>
+    </servlet>
+
+    <!--  管理员修改成绩  -->
+    <servlet>
+        <servlet-name>AdminUpdateGradeServlet</servlet-name>
+        <servlet-class>Control.AdminServlet.AdminUpdateGradeServlet</servlet-class>
+    </servlet>
+
+    <!--  毕业学生信息  -->
+    <servlet>
+        <servlet-name>GraduationServlet</servlet-name>
+        <servlet-class>Control.GraduationServlet</servlet-class>
+    </servlet>
+
+
     <!-- 学生搜索   -->
     <servlet>
         <servlet-name>AdminSearchStudentServlet</servlet-name>
@@ -232,6 +251,24 @@
     <servlet-mapping>
         <servlet-name>SearchStudentPageServlet</servlet-name>
         <url-pattern>/searchStudentPage</url-pattern>
+    </servlet-mapping>
+
+
+    <!--  管理员删除成绩  -->
+    <servlet-mapping>
+        <servlet-name>DeleteByAdminServlet</servlet-name>
+        <url-pattern>/del</url-pattern>
+    </servlet-mapping>
+
+    <!--  管理员修改成绩  -->
+    <servlet-mapping>
+        <servlet-name>AdminUpdateGradeServlet</servlet-name>
+        <url-pattern>/updateGrade</url-pattern>
+    </servlet-mapping>
+    <!--  毕业学生信息  -->
+    <servlet-mapping>
+        <servlet-name>GraduationServlet</servlet-name>
+        <url-pattern>/studentGraduation</url-pattern>
     </servlet-mapping>
 
 </web-app>

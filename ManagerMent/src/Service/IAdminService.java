@@ -103,4 +103,18 @@ public interface IAdminService {
      * @return
      */
     public Page<Student> searchAllStudnetWithPage(int pageNum, int pageSize, Student student);
+    /**
+     * 根据sno,cno修改学生的grade
+     * @param sno,cno,grade
+     * @return boolean true:success
+     */
+    public boolean updateGradeByAdmin(String sno, String cno, double grade);
+
+    /**
+     * 根据sno和 cno删除记录
+     * @param sno ,cno
+     * @return boolean true:success
+     */
+    public boolean delGradeByAdmin(String sno, String cno);
+
 }

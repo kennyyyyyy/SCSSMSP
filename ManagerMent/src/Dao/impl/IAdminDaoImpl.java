@@ -479,4 +479,43 @@ public class IAdminDaoImpl implements IAdminDao {
         return studentList;
     }
 
+    @Override
+    public int updateGradeByAdmin(String sno, String cno, double grade) {
+        Connection conn = DBConUtil.getConn();
+        PreparedStatement pstmt = null;
+        String sql = "update score set grade = ? where sno = ? and cno = ?";
+        int i = 0;
+        try {
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setDouble(1,grade);
+            pstmt.setString(2,sno);
+            pstmt.setString(3,cno);
+            i = pstmt.executeUpdate();
+        }catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            DBConUtil.close(null, pstmt, null);
+        }
+        return i;
+    }
+
+    @Override
+    public int delGradeByAdmin(String sno, String cno) {
+        Connection conn = DBConUtil.getConn();
+        PreparedStatement pstmt = null;
+        String sql = "delete from score where sno = ? and cno = ?";
+        int i = 0;
+        try {
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1,sno);
+            pstmt.setString(2,cno);
+            i = pstmt.executeUpdate();
+        }catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            DBConUtil.close(null, pstmt, null);
+        }
+        return i;
+    }
+
 }

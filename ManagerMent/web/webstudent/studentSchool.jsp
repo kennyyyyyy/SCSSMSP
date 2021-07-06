@@ -29,33 +29,33 @@
             <h2>学籍卡片</h2>
             <table class="table table-bordered" style=" overflow-x: hidden " >
                 <tr class="success" >
-                    <td><img src="/images/ty.png" width="100px" height="55px"></td>
+                    <td><img src="/images/${student.photo}" width="100px" height="55px"></td>
                     <td >姓名</td>
-                    <td width="80px">谭懿</td>
+                    <td width="80px">${student.sname}</td>
                     <td >姓别</td>
-                    <td width="50px">男</td>
+                    <td width="50px">${student.sex==1?"男":"女"}</td>
                     <td >学号</td>
-                    <td width="125px" colspan="2">201908010327</td>
+                    <td width="125px" colspan="2">${student.sno}</td>
 
                 </tr>
 
                 <tr class="success">
                     <td >民族</td>
-                    <td width="50px">汉族</td>
+                    <td width="50px">${student.national}</td>
                     <td >出生日期</td>
-                    <td width="100px">2001-10-03</td>
+                    <td width="100px">${student.birth}</td>
                     <td>邮政编码</td>
-                    <td>423000</td>
+                    <td>${student.postal_code}</td>
                     <td >籍贯</td>
-                    <td width="100px">湖南郴州</td>
+                    <td width="100px">${student.place}</td>
                 </tr>
 
 
                 <tr class="success">
                     <td >身份证号</td>
-                    <td colspan="3">431003200110036511</td>
+                    <td colspan="3">${student.id_card}</td>
                     <td>电子邮箱</td>
-                    <td colspan="3">2801916353@qq.com</td>
+                    <td colspan="3">${student.email}</td>
                 </tr>
 
             </table>

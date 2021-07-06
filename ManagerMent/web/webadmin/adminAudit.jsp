@@ -61,7 +61,12 @@
          //   $('#modify').click(function (){
           function modify(){
               $('#update').modal('show');
-                $.ajax({
+              $('#sex').val(sex);
+              $('#sname').val(sname);
+              $('#admission_data').val(admission_data);
+              $('#graduation_data').val(graduation_data);
+              $('#major').val(major);
+              /*  $.ajax({
                     url:"status",//请求的url地址
                     type:"post",//请求方式
                     candidateType:"json",//json传输格式
@@ -81,7 +86,7 @@
                         }
 
                     }
-                })
+                })*/
           }
            // })
       //  })
@@ -254,28 +259,29 @@
   </div>
 
 
-  <div>
-        <!-- Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-        <div class="modal-content">
-        <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">温馨提示</h4>
-        </div>
-        <div class="modal-body">
-        是否审核通过
-        </div>
 
-        <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-        <button type="button" class="btn btn-primary" id="ok">通过</button>
-        </div>
-        </div>
-        </div>
-        </div>
+                <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">温馨提示</h4>
+                                </div>
+                                <div class="modal-body">
+                                    是否审核通过
+                                </div>
+
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" id="ok">通过</button></div>
+          </div>
       </div>
-    <!-- Modal -->
+  </div>
+
+
+
+                  <!-- Modal -->
   <div class="modal fade" id="update" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -293,7 +299,7 @@
                   </div>
               </div>
               <div>
-                  <label for="sex" class="col-sm-2 control-label">姓名</label>
+                  <label for="sname" class="col-sm-2 control-label">姓名</label>
                   <div class="col-sm-10">
                       <input type="text" class="form-control" id="sname" name="sanme" >
                   </div>

@@ -81,6 +81,18 @@ public class IAdminServiceImpl implements IAdminService {
     }
 
     @Override
+    public boolean updateGradeByAdmin(String sno, String cno, double grade) {
+        int i = iAdminDao.updateGradeByAdmin(sno, cno, grade);
+        return i > 0 ? true:false;
+    }
+
+    @Override
+    public boolean delGradeByAdmin(String sno, String cno) {
+        int i = iAdminDao.delGradeByAdmin(sno, cno);
+        return i > 0 ? true:false;
+    }
+
+    @Override
     public List<Score> searchScore(Score score) {
         return iAdminDao.searchScore(score);
     }

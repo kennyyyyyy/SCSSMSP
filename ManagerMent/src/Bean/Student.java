@@ -16,6 +16,8 @@ public class Student {
     private String postal_code;
     private String password;
     private int status;
+    private String photo;
+    private String birth;
 
 
     private String searchInfo; //储存搜索信息
@@ -191,6 +193,13 @@ public class Student {
         this.status = status;
     }
 
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
 
     public String getSearchInfo() {
         return searchInfo;
@@ -198,5 +207,12 @@ public class Student {
 
     public void setSearchInfo(String searchInfo) {
         this.searchInfo = searchInfo;
+    }
+    public String getBirth() {
+        return birth;
+    }
+
+    public void setBirth(String birth) {
+        this.birth = birth;
     }
 }
