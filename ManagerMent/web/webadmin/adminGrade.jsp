@@ -39,25 +39,25 @@
         $(function (){
             $('#ok').click(function (){
 
-                $.ajax({
-                    url:"del",//请求的url地址
-                    type:"post",//请求方式
-                    candidateType:"json",//json传输格式
-                    async:true,//是否异步传输
-                    data:"sno="+sno+"&cno="+cno,//传入的参数
-                    success:function (data){ //接受服务端响应的数据
-                        if (data == 1) {
-                            //审核成功：1把当前的对话框关闭 2 把审核按钮变成审核文字
-                            (($(obj).parents("tr"))).html(null);
-                            toastr.success("删除成功");
-                        }else {
-                            //审核失败： 1关闭对话框 2 提示用户审核失败
-                            toastr.warning("服务器异常，审核失败");
-                        }
-                        $('#myModal').modal('hide');
-                    }
-                })
-            })
+            //     $.ajax({
+            //         url:"del",//请求的url地址
+            //         type:"post",//请求方式
+            //         candidateType:"json",//json传输格式
+            //         async:true,//是否异步传输
+            //         data:"sno="+sno+"&cno="+cno,//传入的参数
+            //         success:function (data){ //接受服务端响应的数据
+            //             if (data == 1) {
+            //                 //审核成功：1把当前的对话框关闭 2 把审核按钮变成审核文字
+            //                 (($(obj).parents("tr"))).html(null);
+            //                 toastr.success("删除成功");
+            //             }else {
+            //                 //审核失败： 1关闭对话框 2 提示用户审核失败
+            //                 toastr.warning("服务器异常，审核失败");
+            //             }
+            //             $('#myModal').modal('hide');
+            //         }
+            //     })
+            // })
         })
 
 
@@ -232,7 +232,9 @@
                     </td>
                     <td>
                         <button class="btn btn-info btn-xs" onclick="show2('${score.sno}', this, '${score.cno}', '${score.grade}')">修改</button>
-                        <button class="btn btn-primary btn-xs" onclick="showd('${score.sno}', this,'${score.cno}')">删除</button>
+                        <button class="btn btn-info btn-xs" >
+                            <a href="del?sno=${score.sno }&cno=${score.cno}"  onclick="if(confirm('是否确认删除?')){ alert('删除成功');return true;}else{ alert('删除失败');return false;}">删除</a>
+                        </button>
                     </td>
                 </tr>
             </c:forEach>

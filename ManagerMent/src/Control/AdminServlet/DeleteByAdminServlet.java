@@ -29,8 +29,12 @@ public class DeleteByAdminServlet extends HttpServlet {
         String sno = request.getParameter("sno");
         String cno = request.getParameter("cno");
         boolean result = iAdminService.delGradeByAdmin(sno, cno);
-        PrintWriter writer = response.getWriter();
-        writer.print(result ? 1 : 0);
+        if(result) {
+            request.setAttribute("info", "删除成功!");
+        }else {
+            request.setAttribute("info", "系统错误，删除失败!");
+        }
+        request.getRequestDispatcher("adminGrade").forward(request, response);
 
     }
 }

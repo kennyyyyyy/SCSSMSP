@@ -34,7 +34,7 @@ public class ImportScoreServlet extends HttpServlet {
         boolean success = iAdminService.addScore(score);
 
         if(success){
-            req.getRequestDispatcher("webadmin/adminGrade.jsp").forward(req,resp);
+            req.getRequestDispatcher("adminGrade").forward(req,resp);
         }else{
             req.getRequestDispatcher("webadmin/adminGradeAdd.jsp").forward(req,resp);
         }
