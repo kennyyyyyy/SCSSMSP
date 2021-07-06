@@ -32,6 +32,6 @@ public class AdminResetPwdServlet extends HttpServlet {
         }else {
             request.setAttribute("info", "系统错误，重置密码失败!");
         }
-        request.getRequestDispatcher("adminAudit").forward(request, response);
+        request.getRequestDispatcher("searchStudentPage?pageNum=1&inputInfo=").forward(request, response);
     }
 }
