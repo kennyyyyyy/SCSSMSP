@@ -1,9 +1,6 @@
 package Dao;
 
-import Bean.Admin;
-import Bean.Course;
-import Bean.Score;
-import Bean.Student;
+import Bean.*;
 
 import java.util.List;
 import java.util.zip.CheckedOutputStream;
@@ -86,6 +83,12 @@ public interface IAdminDao {
      */
     List<Course> searchCourse(Course course);
 
+    /**
+     * 搜索学生信息
+     * @param student
+     * @return
+     */
+    List<Student> searchStudent(Student student);
 
     /**
      * 根据sno修改学生的sex,sname,admission_data,graduation_data,major
@@ -100,4 +103,13 @@ public interface IAdminDao {
      * @return boolean true:success
      */
     public int resetPwdByAdmin(String sno);
+
+
+    /**
+     * 获得分页的所有新信息
+     * @param pageNum
+     * @param pageSize
+     * @return
+     */
+    public Page<Student> searchAllStudnetWithPage(int pageNum, int pageSize, Student student);
 }

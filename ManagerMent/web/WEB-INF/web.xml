@@ -105,6 +105,19 @@
         <servlet-class>Control.AdminServlet.AdminResetPwdServlet</servlet-class>
     </servlet>
 
+    <!-- 学生搜索   -->
+    <servlet>
+        <servlet-name>AdminSearchStudentServlet</servlet-name>
+        <servlet-class>Control.AdminServlet.Search.SearchStudentServlet</servlet-class>
+    </servlet>
+
+    <!-- 学生搜索并分页   -->
+    <servlet>
+        <servlet-name>SearchStudentPageServlet</servlet-name>
+        <servlet-class>Control.AdminServlet.Search.SearchStudentPageServlet</servlet-class>
+    </servlet>
+
+
 
 
     <!--  登录  -->
@@ -208,4 +221,17 @@
         <servlet-name>AdminResetPwdServlet</servlet-name>
         <url-pattern>/reset</url-pattern>
     </servlet-mapping>
+
+    <!--  学生搜索  -->
+    <servlet-mapping>
+        <servlet-name>AdminSearchStudentServlet</servlet-name>
+        <url-pattern>/searchStudent</url-pattern>
+    </servlet-mapping>
+
+    <!--  搜索学生并分页  -->
+    <servlet-mapping>
+        <servlet-name>SearchStudentPageServlet</servlet-name>
+        <url-pattern>/searchStudentPage</url-pattern>
+    </servlet-mapping>
+
 </web-app>

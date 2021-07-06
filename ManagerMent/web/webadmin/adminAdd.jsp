@@ -25,8 +25,9 @@
   <div>
 
     <div style="float: right">
-      <a class="btn btn-default active" href="${pageContext.request.contextPath}/webadmin/adminAudit.jsp" role="button">返回</a>
+      <a class="btn btn-default active" href="../adminAudit" role="button">返回</a>
     </div>
+    <div class="clearfix"></div>
   </div>
   <div class="row">
     <div class="col-sm-6 col-md-3">

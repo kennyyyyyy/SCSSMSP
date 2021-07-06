@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.util.List;
 
 public class AdminAuditServlet extends HttpServlet {
+
     private IAdminService adminService = new IAdminServiceImpl();
 
     @Override
@@ -27,8 +28,10 @@ public class AdminAuditServlet extends HttpServlet {
          * ① 问services要所有的用户列表
          * ② 把用户列表List<Lover>传输到用户管理首页
          */
-        List<Student> list = adminService.getStudentListByAdmin();
-        request.setAttribute("list", list);
+        Student student = new Student();
+
+        List<Student> studentList = adminService.searchStudent(student);
+        request.setAttribute("studentList", studentList);
         request.getRequestDispatcher("webadmin/adminAudit.jsp").forward(request, response);
     }
 

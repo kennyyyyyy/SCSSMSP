@@ -1,9 +1,6 @@
 package Service.impl;
 
-import Bean.Admin;
-import Bean.Course;
-import Bean.Score;
-import Bean.Student;
+import Bean.*;
 import Dao.IAdminDao;
 import Dao.impl.IAdminDaoImpl;
 import Service.IAdminService;
@@ -79,6 +76,11 @@ public class IAdminServiceImpl implements IAdminService {
     }
 
     @Override
+    public Page<Student> searchAllStudnetWithPage(int pageNum, int pageSize, Student student) {
+        return iAdminDao.searchAllStudnetWithPage(pageNum, pageSize, student);
+    }
+
+    @Override
     public List<Score> searchScore(Score score) {
         return iAdminDao.searchScore(score);
     }
@@ -86,6 +88,11 @@ public class IAdminServiceImpl implements IAdminService {
     @Override
     public List<Course> searchCourse(Course course) {
         return iAdminDao.searchCourse(course);
+    }
+
+    @Override
+    public List<Student> searchStudent(Student student) {
+        return iAdminDao.searchStudent(student);
     }
 
 }

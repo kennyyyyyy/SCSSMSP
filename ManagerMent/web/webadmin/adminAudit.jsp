@@ -145,26 +145,35 @@
 </head>
 <body>
 
-  <div class="container" style="text-align: center;width: 1000px">
+  <div class="container-fluid">
     <div>
+      <div style="float:left;">
+          <form class="form-inline" action="../searchStudent?pageNum=1" method="post">
+              <div class="form-group">
+                  <label for="inputInfo">搜索信息</label>
+                  <input type="text" class="form-control" id="inputInfo" name="inputInfo" placeholder="${inputInfo}">
+              </div>
+              <button type="submit" class="btn btn-default">搜索</button>
+          </form>
+      </div>
       <div style="float: right">
-        <%--   显示未审核学生信息   --%>
         <a class="btn btn-default active" href="${pageContext.request.contextPath}/webadmin/adminAdd.jsp" role="button">导入学生信息</a>
       </div>
     </div>
-        <table class="table table-bordered" style=" overflow-x: hidden" >
+    <div class="clearfix"></div>
+    <table class="table table-bordered" style=" overflow-x: hidden" >
           <tr class="success">
-            <th width="125px" style="text-align: center">学号</th>
-            <th width="50px" style="text-align: center">性别</th>
-            <th width="80px" style="text-align: center">姓名</th>
-            <th width="100px" style="text-align: center">入学时间</th>
-            <th width="100px" style="text-align: center">毕业时间</th>
-            <th  style="text-align: center">专业</th>
-            <th  style="text-align: center">操作</th>
+            <th style="text-align: center">学号</th>
+            <th style="text-align: center">性别</th>
+            <th style="text-align: center">姓名</th>
+            <th style="text-align: center">入学时间</th>
+            <th style="text-align: center">毕业时间</th>
+            <th style="text-align: center">专业</th>
+            <th style="text-align: center">操作</th>
 
           </tr>
-<c:forEach items="${list }" var="student">
-          <tr class="success">
+          <c:forEach items="${studentList }" var="student">
+            <tr class="success">
             <td>${student.sno}</td>
             <td>${student.sex==1?"男":"女"}</td>
             <td>${student.sname}</td>
@@ -192,41 +201,81 @@
                     </span>
 
             </td>
-          </tr>
+            </tr>
+          </c:forEach>
+      </table>
+      <div class="text-center" style="position: absolute; left: 40%; bottom: 15%">
+          <%-- 构建分页导航 --%>
+          共有${pageBean.totalRecord}个学生，共${pageBean.totalPage }页，当前为${pageBean.pageNum}页
+          <br/>
+          <a href="../searchStudentPage?pageNum=1&inputInfo=${inputInfo}">首页</a>
+          <%--如果当前页为第一页时，就没有上一页这个超链接显示 --%>
+          <c:if test="${ pageBean.pageNum ==1}">
+              <c:forEach begin="${ pageBean.start}" end="${pageBean.end}" step="1" var="i">
+                  <c:if test="${pageBean.pageNum == i}">
+                      ${i}
+                  </c:if>
+                  <c:if test="${pageBean.pageNum != i}">
+                      <a href="../searchStudentPage?pageNum=${i}&inputInfo=${inputInfo}">${i}</a>
+                  </c:if>
+              </c:forEach>
+              <a href="../searchStudentPage?pageNum=${pageBean.pageNum+1}&inputInfo=${inputInfo}">下一页</a>
+          </c:if>
 
-</c:forEach>
-        </table>
+          <%--如果当前页不是第一页也不是最后一页，则有上一页和下一页这个超链接显示 --%>
+          <c:if test="${pageBean.pageNum > 1 && pageBean.pageNum < pageBean.totalPage}">
+              <a href="../searchStudentPage?pageNum=${pageBean.pageNum-1}&inputInfo=${inputInfo}">上一页</a>
+              <c:forEach begin="${pageBean.start}" end="${pageBean.end}" step="1" var="i">
+                  <c:if test="${pageBean.pageNum == i}">
+                      ${i}
+                  </c:if>
+                  <c:if test="${pageBean.pageNum != i}">
+                      <a href="../searchStudentPage?pageNum=${i}&inputInfo=${inputInfo}">${i}</a>
+                  </c:if>
+              </c:forEach>
+              <a href="../searchStudentPage?pageNum=${pageBean.pageNum+1}&inputInfo=${inputInfo}">下一页</a>
+          </c:if>
+
+          <%-- 如果当前页是最后一页，则只有上一页这个超链接显示，下一页没有 --%>
+          <c:if test="${pageBean.pageNum == pageBean.totalPage}">
+              <a href="../searchStudentPage?pageNum=${pageBean.pageNum-1}&inputInfo=${inputInfo}">上一页</a>
+              <c:forEach begin="${pageBean.start}" end="${pageBean.end}" step="1" var="i">
+                  <c:if test="${pageBean.pageNum == i}">
+                      ${i}
+                  </c:if>
+                  <c:if test="${pageBean.pageNum != i}">
+                      <a href="../searchStudentPage?pageNum=${i}&inputInfo=${inputInfo}">${i}</a>
+                  </c:if>
+              </c:forEach>
+          </c:if>
+          <%--尾页 --%>
+          <a href="../searchStudentPage?pageNum=${pageBean.totalPage}&inputInfo=${inputInfo}">尾页</a>
       </div>
+  </div>
 
-                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-                Launch demo modal
-                </button>
 
-                <!-- Modal -->
-                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">温馨提示</h4>
-                </div>
-                <div class="modal-body">
-                是否审核通过
-                </div>
+  <div>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">温馨提示</h4>
+        </div>
+        <div class="modal-body">
+        是否审核通过
+        </div>
 
-                <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                <button type="button" class="btn btn-primary" id="ok">通过</button>
-                </div>
-                </div>
-                </div>
-                </div>
-
-                  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#update">
-                      修改数据
-                  </button>
-
-                  <!-- Modal -->
+        <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary" id="ok">通过</button>
+        </div>
+        </div>
+        </div>
+        </div>
+      </div>
+    <!-- Modal -->
   <div class="modal fade" id="update" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -252,13 +301,13 @@
               <div>
                   <label for="admission_data" class="col-sm-2 control-label">入学时间</label>
                   <div class="col-sm-10">
-                      <input type="text" class="form-control" id="admission_data" name="admission_data" >
+                      <input type="date" class="form-control" id="admission_data" name="admission_data" >
                   </div>
               </div>
               <div>
                   <label for="graduation_data" class="col-sm-2 control-label">毕业时间</label>
                   <div class="col-sm-10">
-                      <input type="text" class="form-control" id="graduation_data" name="graduation_data" >
+                      <input type="date" class="form-control" id="graduation_data" name="graduation_data" >
                   </div>
               </div>
               <div>

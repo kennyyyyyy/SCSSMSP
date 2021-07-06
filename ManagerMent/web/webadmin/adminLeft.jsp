@@ -30,7 +30,7 @@
 <body>
   <div class="list-group">
     <h4 class="titleColor list-group-item">信息管理</h4>
-    <a href="adminAudit" class="list-group-item active">学籍信息管理</a>
+    <a href="searchStudentPage?pageNum=1&inputInfo=" class="list-group-item active">学籍信息管理</a>
     <a href="adminCourse" class="list-group-item">课程信息管理</a>
     <a href="adminGrade" class="list-group-item">成绩管理</a>
   </div>

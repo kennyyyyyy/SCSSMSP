@@ -17,6 +17,9 @@ public class Student {
     private String password;
     private int status;
 
+
+    private String searchInfo; //储存搜索信息
+
     public Student(String sno, int sex, String sname, String admission_data, String  graduation_data, String major, int status) {
         this.sno = sno;
         this.sex = sex;
@@ -45,7 +48,7 @@ public class Student {
     }
 
     public Student(){
-
+        this.searchInfo = "";
     }
 
     public Student(String sno, String password){
@@ -60,6 +63,10 @@ public class Student {
         this.admission_data = admission_data;
         this.major = major;
         this.id_card = id_card;
+    }
+
+    public Student(String searchInfo){
+        this.searchInfo = searchInfo;
     }
 
     public String getSno() {
@@ -185,4 +192,11 @@ public class Student {
     }
 
 
+    public String getSearchInfo() {
+        return searchInfo;
+    }
+
+    public void setSearchInfo(String searchInfo) {
+        this.searchInfo = searchInfo;
+    }
 }

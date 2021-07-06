@@ -1,9 +1,6 @@
 package Dao.impl;
 
-import Bean.Admin;
-import Bean.Course;
-import Bean.Score;
-import Bean.Student;
+import Bean.*;
 import Dao.IAdminDao;
 import util.DBConUtil;
 
@@ -335,6 +332,51 @@ public class IAdminDaoImpl implements IAdminDao {
     }
 
     @Override
+    public List<Student> searchStudent(Student student) {
+        PreparedStatement pstmt = null;
+        Connection conn = null;
+        ResultSet rs = null;
+        List<Student> studentList = new ArrayList<>();
+
+        try{
+            conn = DBConUtil.getConn();
+
+            String sql = "select sno, sex, sname, admission_data, graduation_data, major, status from student where sno like ? or sname like ? or student.admission_data like ? or graduation_data like ? or major like ?";
+
+            pstmt = conn.prepareStatement(sql);
+
+            String info  = student.getSearchInfo();
+            info = info.trim();
+            info = "%" + info + "%";
+
+            pstmt.setString(1, info);
+            pstmt.setString(2, info);
+            pstmt.setString(3, info);
+            pstmt.setString(4, info);
+            pstmt.setString(5, info);
+
+            rs = pstmt.executeQuery();
+
+            while(rs.next()){
+                Student studenttp = new Student();
+                studenttp.setSno(rs.getString("sno"));
+                studenttp.setSex(rs.getInt("sex"));
+                studenttp.setSname(rs.getString("sname"));
+                studenttp.setAdmission_data(rs.getString("admission_data"));
+                studenttp.setGraduation_data(rs.getString("graduation_data"));
+                studenttp.setMajor(rs.getString("major"));
+                studenttp.setStatus(rs.getInt("status"));
+                studentList.add(studenttp);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            DBConUtil.close(rs, pstmt, null);
+        }
+        return studentList;
+    }
+
+    @Override
     public int updateAllByAdmin(String sno, int sex, String sname, String admission_data, String graduation_data, String major) {
         Connection conn = DBConUtil.getConn();
         PreparedStatement pstmt = null;
@@ -373,6 +415,68 @@ public class IAdminDaoImpl implements IAdminDao {
             DBConUtil.close(null, pstmt, null);
         }
         return i;
+    }
+
+    @Override
+    public Page<Student> searchAllStudnetWithPage(int pageNum, int pageSize, Student student) {
+
+        List<Student> studentList = this.searchStudent(student);
+        int totalRecord = studentList.size();
+
+        Page page = new Page(pageNum, pageSize, totalRecord);
+
+        int startIndex = page.getStartIndex();
+
+        page.setList(this.searchPageStudent(startIndex, pageSize, student));
+
+        return page;
+    }
+
+    private List<Student> searchPageStudent(int startIndex, int pageSize, Student student){
+        PreparedStatement pstmt = null;
+        Connection conn = null;
+        ResultSet rs = null;
+        List<Student> studentList = new ArrayList<>();
+
+        try{
+            conn = DBConUtil.getConn();
+
+            String sql = "select sno, sex, sname, admission_data, graduation_data, major, status from student where sno like ? or sname like ? or student.admission_data like ? or graduation_data like ? or major like ? limit ?, ?";
+
+            pstmt = conn.prepareStatement(sql);
+
+            String info  = student.getSearchInfo();
+            info = info.trim();
+            info = "%" + info + "%";
+
+            pstmt.setString(1, info);
+            pstmt.setString(2, info);
+            pstmt.setString(3, info);
+            pstmt.setString(4, info);
+            pstmt.setString(5, info);
+            pstmt.setInt(6, startIndex);
+            pstmt.setInt(7, pageSize);
+
+            rs = pstmt.executeQuery();
+
+            while(rs.next()){
+                Student studenttp = new Student();
+                studenttp.setSno(rs.getString("sno"));
+                studenttp.setSex(rs.getInt("sex"));
+                studenttp.setSname(rs.getString("sname"));
+                studenttp.setAdmission_data(rs.getString("admission_data"));
+                studenttp.setGraduation_data(rs.getString("graduation_data"));
+                studenttp.setMajor(rs.getString("major"));
+                studenttp.setStatus(rs.getInt("status"));
+                studentList.add(studenttp);
+
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            DBConUtil.close(rs, pstmt, null);
+        }
+        return studentList;
     }
 
 }

@@ -1,6 +1,8 @@
 package Control.AdminServlet.Search;
 
-import Bean.Course;
+import Bean.Page;
+import Bean.Student;
+import Dao.IAdminDao;
 import Service.IAdminService;
 import Service.impl.IAdminServiceImpl;
 
@@ -9,9 +11,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
-public class SearchCourseServlet extends HttpServlet {
+public class SearchStudentPageServlet extends HttpServlet {
+
     IAdminService iAdminService = new IAdminServiceImpl();
 
     @Override
@@ -23,19 +25,18 @@ public class SearchCourseServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
 
+        int pageNum = Integer.parseInt(req.getParameter("pageNum"));
         String info = req.getParameter("inputInfo");
-        String course_nature = req.getParameter("inputCN");
 
+        Student student = new Student(info);
 
-        int cn = Integer.parseInt(course_nature);
+        int pageSize = 10;
+
+        Page page = iAdminService.searchAllStudnetWithPage(pageNum, pageSize, student);
 
         req.setAttribute("inputInfo", info);
-
-        Course course = new Course(info, cn);
-
-        List<Course> courseList = iAdminService.searchCourse(course);
-
-        req.setAttribute("courseList", courseList);
-        req.getRequestDispatcher("webadmin/adminCourse.jsp").forward(req, resp);
+        req.setAttribute("pageBean", page);
+        req.setAttribute("studentList", page.getList());
+        req.getRequestDispatcher("webadmin/adminAudit.jsp").forward(req,resp);
     }
 }
