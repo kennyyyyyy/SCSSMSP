@@ -341,19 +341,32 @@ public class IAdminDaoImpl implements IAdminDao {
         try{
             conn = DBConUtil.getConn();
 
-            String sql = "select sno, sex, sname, admission_data, graduation_data, major, status from student where sno like ? or sname like ? or student.admission_data like ? or graduation_data like ? or major like ?";
-
-            pstmt = conn.prepareStatement(sql);
-
             String info  = student.getSearchInfo();
-            info = info.trim();
-            info = "%" + info + "%";
+            String sql;
+            int status;
 
-            pstmt.setString(1, info);
-            pstmt.setString(2, info);
-            pstmt.setString(3, info);
-            pstmt.setString(4, info);
-            pstmt.setString(5, info);
+            if(info.equals("未审核") || info.equals("已审核")) {
+                status = info.equals("未审核")?0:1;
+                sql = "select sno, sex, sname, admission_data, graduation_data, major, status from student where status=?";
+
+                pstmt = conn.prepareStatement(sql);
+
+                pstmt.setInt(1, status);
+            }else{
+                info = info.trim();
+                info = "%" + info + "%";
+
+                sql = "select sno, sex, sname, admission_data, graduation_data, major, status from student where sno like ? or sname like ? or student.admission_data like ? or graduation_data like ? or major like ?";
+
+                pstmt = conn.prepareStatement(sql);
+
+                pstmt.setString(1, info);
+                pstmt.setString(2, info);
+                pstmt.setString(3, info);
+                pstmt.setString(4, info);
+                pstmt.setString(5, info);
+
+            }
 
             rs = pstmt.executeQuery();
 
@@ -441,21 +454,36 @@ public class IAdminDaoImpl implements IAdminDao {
         try{
             conn = DBConUtil.getConn();
 
-            String sql = "select sno, sex, sname, admission_data, graduation_data, major, status from student where sno like ? or sname like ? or student.admission_data like ? or graduation_data like ? or major like ? limit ?, ?";
-
-            pstmt = conn.prepareStatement(sql);
-
             String info  = student.getSearchInfo();
-            info = info.trim();
-            info = "%" + info + "%";
+            String sql;
+            int status;
 
-            pstmt.setString(1, info);
-            pstmt.setString(2, info);
-            pstmt.setString(3, info);
-            pstmt.setString(4, info);
-            pstmt.setString(5, info);
-            pstmt.setInt(6, startIndex);
-            pstmt.setInt(7, pageSize);
+            if(info.equals("未审核") || info.equals("已审核"))
+            {
+                status = info.equals("未审核")?0:1;
+                sql = "select sno, sex, sname, admission_data, graduation_data, major, status from student where status=? limit ?, ?";
+
+                pstmt = conn.prepareStatement(sql);
+
+                pstmt.setInt(1, status);
+                pstmt.setInt(2, startIndex);
+                pstmt.setInt(3, pageSize);
+            }else{
+                info = info.trim();
+                info = "%" + info + "%";
+
+                sql = "select sno, sex, sname, admission_data, graduation_data, major, status from student where sno like ? or sname like ? or student.admission_data like ? or graduation_data like ? or major like ? limit ?, ?";
+
+                pstmt = conn.prepareStatement(sql);
+
+                pstmt.setString(1, info);
+                pstmt.setString(2, info);
+                pstmt.setString(3, info);
+                pstmt.setString(4, info);
+                pstmt.setString(5, info);
+                pstmt.setInt(6, startIndex);
+                pstmt.setInt(7, pageSize);
+            }
 
             rs = pstmt.executeQuery();
 

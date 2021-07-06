@@ -141,28 +141,34 @@
 
 
     </script>
-  <style>
+    <style>
     td{
       text-align: center;
     }
   </style>
 
+
 </head>
 <body>
-
+  <style >
+    body{
+        style:"background: url('/images/light.png')"
+    }
+</style>
   <div class="container-fluid">
     <div>
       <div style="float:left;">
           <form class="form-inline" action="../searchStudent?pageNum=1" method="post">
               <div class="form-group">
-                  <label for="inputInfo">搜索信息</label>
+                  <label for="inputInfo">搜索</label>
                   <input type="text" class="form-control" id="inputInfo" name="inputInfo" placeholder="${inputInfo}">
               </div>
-              <button type="submit" class="btn btn-default">搜索</button>
+              <button type="submit" class="btn btn-default" ><span style="background: url('/images/main/search.png') no-repeat; display: block; width: 20px; height: 20px; float: left"></span>搜索</button>
           </form>
       </div>
+
       <div style="float: right">
-        <a class="btn btn-default active" href="${pageContext.request.contextPath}/webadmin/adminAdd.jsp" role="button">导入学生信息</a>
+        <a class="btn btn-info active" href="${pageContext.request.contextPath}/webadmin/adminAdd.jsp" role="button">导入学生信息</a>
       </div>
     </div>
     <div class="clearfix"></div>
@@ -209,7 +215,7 @@
             </tr>
           </c:forEach>
       </table>
-      <div class="text-center" style="position: absolute; left: 40%; bottom: 15%">
+    <div class="text-center" style="position: absolute; left: 40%; bottom: 15%">
           <%-- 构建分页导航 --%>
           共有${pageBean.totalRecord}个学生，共${pageBean.totalPage }页，当前为${pageBean.pageNum}页
           <br/>
@@ -258,31 +264,27 @@
       </div>
   </div>
 
-
-
-                <!-- Modal -->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                    <h4 class="modal-title" id="myModalLabel">温馨提示</h4>
-                                </div>
-                                <div class="modal-body">
-                                    是否审核通过
-                                </div>
-
-                                <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                <button type="button" class="btn btn-primary" id="ok">通过</button></div>
-          </div>
+  <div>
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">温馨提示</h4>
+        </div>
+        <div class="modal-body">
+        是否审核通过
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            <button type="button" class="btn btn-primary" id="ok">通过</button></div>
+        </div>
       </div>
   </div>
 
-
-
                   <!-- Modal -->
-  <div class="modal fade" id="update" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal fade" id="update" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
           <div class="modal-content">
               <div class="modal-header">
@@ -330,6 +332,6 @@
           </div>
       </div>
   </div>
-
+  </div>
 </body>
 </html>

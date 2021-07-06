@@ -2,6 +2,16 @@
     background: url("/images/head/color1.png") repeat;
 }
 
-.active{
+.list-group-item-info{
+    color: #fff;
+}
+
+a cite{
+    display:block;
+    float:left;
+
+    margin-top:9px;
+}
+ a.active cite{
 
 }

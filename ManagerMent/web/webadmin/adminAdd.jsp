@@ -25,12 +25,12 @@
   <div>
 
     <div style="float: right">
-      <a class="btn btn-default active" href="../adminAudit" role="button">返回</a>
+      <a class="btn btn-default active" href="../searchStudentPage?pageNum=1&inputInfo=" role="button">返回</a>
     </div>
     <div class="clearfix"></div>
   </div>
   <div class="row">
-    <div class="col-sm-6 col-md-3">
+    <div class="col-sm-3 col-md-3">
     </div>
     <div class="col-sm-6 col-md-6">
       <form class="form-horizontal" action="../import" method="post" id="addForm">
@@ -86,7 +86,7 @@
           </div>
             </form>
           </div>
-        <div class="col-sm-6 col-md-3">
+    <div class="col-sm-3 col-md-3">
 
         </div>
       </div>
