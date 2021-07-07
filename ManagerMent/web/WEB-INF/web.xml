@@ -136,6 +136,12 @@
         <servlet-class>Control.AdminServlet.Search.SearchStudentPageServlet</servlet-class>
     </servlet>
 
+    <!-- 学生修改密码   -->
+    <servlet>
+        <servlet-name>ModifyPwdByStuServlet</servlet-name>
+        <servlet-class>Control.ModifyPwdByStuServlet</servlet-class>
+    </servlet>
+
 
 
 
@@ -269,6 +275,12 @@
     <servlet-mapping>
         <servlet-name>GraduationServlet</servlet-name>
         <url-pattern>/studentGraduation</url-pattern>
+    </servlet-mapping>
+
+    <!--  学生修改密码  -->
+    <servlet-mapping>
+        <servlet-name>ModifyPwdByStuServlet</servlet-name>
+        <url-pattern>/modify</url-pattern>
     </servlet-mapping>
 
 </web-app>

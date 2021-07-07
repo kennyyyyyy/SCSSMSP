@@ -22,5 +22,11 @@ public class IStudentServiceImpl implements IStudentService {
         return iStudentDao.getGraduationList();
     }
 
+    @Override
+    public boolean modifyPassword(String sno, String password) {
+        int i = iStudentDao.modifyPassword(sno, password);
+        return i > 0 ? true:false;
+    }
+
 
 }

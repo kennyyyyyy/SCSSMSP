@@ -17,4 +17,11 @@ public interface IStudentService {
      * @return List<GraduationStudent>
      */
     List<GraduationStudent> getGraduationList();
+
+    /**
+     * 根据sno修改学生的password
+     * @param sno,password
+     * @return boolean true:success
+     */
+    public boolean modifyPassword(String sno, String password);
 }

@@ -21,7 +21,7 @@ public class IStudentDaoImpl implements IStudentDao {
 
         try{
             conn = DBConUtil.getConn();
-            String sql = "select sname,photo,sex,national,birth,place,id_card,email,postal_code,sno,graduation_flag from student where sno=? and password=?";
+            String sql = "select sname,photo,sex,national,birth,place,id_card,email,postal_code,sno,graduation_flag,password from student where sno=? and password=?";
             //  String sql = "select sname from student where sno=? and password = ?";
             pstmt = conn.prepareStatement(sql);
 
@@ -42,6 +42,7 @@ public class IStudentDaoImpl implements IStudentDao {
                 String postal_code = rs.getString("postal_code");
                 String sno = rs.getString("sno");
                 int graduation_flag = rs.getInt("graduation_flag");
+                String password = rs.getString("password");
 
                 stp.setSname(sname);
                 stp.setNational(national);
@@ -54,6 +55,7 @@ public class IStudentDaoImpl implements IStudentDao {
                 stp.setPostal_code(postal_code);
                 stp.setSno(sno);
                 stp.setGraduation_flag(graduation_flag);
+                stp.setPassword(password);
 
 
             }
@@ -68,15 +70,14 @@ public class IStudentDaoImpl implements IStudentDao {
 
     @Override
     public List<GraduationStudent> getGraduationList() {
-        System.out.println("3");
+
         Connection conn = DBConUtil.getConn();
         ResultSet rs = null;
         PreparedStatement pstmt = null;
         String sql = "SELECT sno,graduation_type,graduation_conclusion,graduation_data,graduation_id,graduation_class FROM graduation_situation ";
         List<GraduationStudent> list = null;
-        System.out.println("1");
+
         try {
-            System.out.println("2");
             pstmt = conn.prepareStatement(sql);
             rs = pstmt.executeQuery();
             list = new ArrayList<GraduationStudent>();
@@ -84,7 +85,6 @@ public class IStudentDaoImpl implements IStudentDao {
                 GraduationStudent temp = new GraduationStudent(rs.getString("sno"),rs.getString("graduation_type"), rs.getString("graduation_conclusion"),
                         rs.getString("graduation_data"),rs.getString("graduation_id"),rs.getString("graduation_class"));
                 list.add(temp);
-                System.out.println(rs.getString("sno"));
             }
 
 
@@ -94,6 +94,25 @@ public class IStudentDaoImpl implements IStudentDao {
             DBConUtil.close(rs,pstmt,null);
         }
         return list;
+    }
+
+    @Override
+    public int modifyPassword(String sno, String password) {
+        Connection conn = DBConUtil.getConn();
+        PreparedStatement pstmt = null;
+        String sql = "update student set password = ? where sno = ? ";
+        int i = 0;
+        try {
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1,password);
+            pstmt.setString(2,sno);
+            i = pstmt.executeUpdate();
+        }catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            DBConUtil.close(null, pstmt, null);
+        }
+        return i;
     }
 
 

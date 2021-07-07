@@ -117,4 +117,7 @@ public interface IAdminService {
      */
     public boolean delGradeByAdmin(String sno, String cno);
 
+
+
+
 }

@@ -92,6 +92,8 @@ public class IAdminServiceImpl implements IAdminService {
         return i > 0 ? true:false;
     }
 
+
+
     @Override
     public List<Score> searchScore(Score score) {
         return iAdminDao.searchScore(score);

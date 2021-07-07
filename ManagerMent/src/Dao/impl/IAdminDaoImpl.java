@@ -393,24 +393,46 @@ public class IAdminDaoImpl implements IAdminDao {
     public int updateAllByAdmin(String sno, int sex, String sname, String admission_data, String graduation_data, String major) {
         Connection conn = DBConUtil.getConn();
         PreparedStatement pstmt = null;
-        String sql = "update student set sex = ? , sname = ?, admission_data = ?, graduation_data = ?, major = ?  where sno = ? ";
-        int i = 0;
-        try {
-            pstmt = conn.prepareStatement(sql);
-            pstmt.setInt(1,sex);
-            pstmt.setString(2,sname);
-            pstmt.setString(3,admission_data);
-            pstmt.setString(4,graduation_data);
-            pstmt.setString(5,major);
-            pstmt.setString(6,sno);
-            i = pstmt.executeUpdate();
-        }catch (Exception e) {
-            e.printStackTrace();
-        }finally {
-            DBConUtil.close(null, pstmt, null);
+        if (graduation_data.equals(null) || graduation_data =="") {
+            String sql = "update student set sex = ? , sname = ?, admission_data = ?,  major = ?  where sno = ? ";
+            int i = 0;
+            try {
+                pstmt = conn.prepareStatement(sql);
+                pstmt.setInt(1, sex);
+                pstmt.setString(2, sname);
+                pstmt.setString(3, admission_data);
+                pstmt.setString(4, major);
+                pstmt.setString(5, sno);
+                i = pstmt.executeUpdate();
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                DBConUtil.close(null, pstmt, null);
+            }
+            return i;
         }
-        return i;
+        else {
+            String sql = "update student set sex = ? , sname = ?, admission_data = ?, graduation_data = ?, major = ?  where sno = ? ";
+            int i = 0;
+            try {
+                pstmt = conn.prepareStatement(sql);
+                pstmt.setInt(1, sex);
+                pstmt.setString(2, sname);
+                pstmt.setString(3, admission_data);
+                pstmt.setString(4, graduation_data);
+                pstmt.setString(5, major);
+                pstmt.setString(6, sno);
+                i = pstmt.executeUpdate();
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                DBConUtil.close(null, pstmt, null);
+            }
+            return i;
+        }
     }
+
+
 
     @Override
     public int resetPwdByAdmin(String sno) {

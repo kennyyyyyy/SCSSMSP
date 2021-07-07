@@ -97,6 +97,8 @@ public interface IAdminDao {
      */
     public int updateAllByAdmin(String sno, int sex, String sname, String admission_data, String graduation_data, String major);
 
+
+
     /**
      * 根据sno重置密码
      * @param sno

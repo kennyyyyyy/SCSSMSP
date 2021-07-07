@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: ASUS
@@ -14,6 +15,9 @@
     <link rel="stylesheet" href="../bootstrap-3.4.1/css/bootstrap.min.css">
     <script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="../bootstrap-3.4.1/js/bootstrap.min.js"></script>
+    <!--jquery提示筐插件-->
+    <link rel="stylesheet" href="../toastr/toastr.css">
+    <script type="text/javascript" src="../toastr/toastr.js"></script>
     <style>
         th {
             text-align: center;
@@ -21,45 +25,50 @@
         td {
             text-align: center;
         }
-    </style>    
+    </style>
+    <script>
+
+    </script>
 </head>
 <body>
 
-<div class="container" style="text-align: center;width: 1000px" >
-            <h2>学籍卡片</h2>
-            <table class="table table-bordered" style=" overflow-x: hidden " >
-                <tr class="success" >
-                    <td><img src="/images/${student.photo}" width="100px" height="55px"></td>
-                    <td >姓名</td>
-                    <td width="80px">${student.sname}</td>
-                    <td >姓别</td>
-                    <td width="50px">${student.sex==1?"男":"女"}</td>
-                    <td >学号</td>
-                    <td width="125px" colspan="2">${student.sno}</td>
+            <div class="container" style="text-align: center;width: 1000px" >
+                        <h2>学籍卡片</h2>
+                        <table class="table table-bordered" style=" overflow-x: hidden " >
+                            <tr class="info" >
+                                <td><img src="/images/${student.photo}" width="100px" height="55px"></td>
+                                <td >姓名</td>
+                                <td width="80px">${student.sname}</td>
+                                <td >姓别</td>
+                                <td width="50px">${student.sex==1?"男":"女"}</td>
+                                <td >学号</td>
+                                <td width="125px" colspan="2">${student.sno}</td>
 
-                </tr>
+                            </tr>
 
-                <tr class="success">
-                    <td >民族</td>
-                    <td width="50px">${student.national}</td>
-                    <td >出生日期</td>
-                    <td width="100px">${student.birth}</td>
-                    <td>邮政编码</td>
-                    <td>${student.postal_code}</td>
-                    <td >籍贯</td>
-                    <td width="100px">${student.place}</td>
-                </tr>
+                            <tr class="info">
+                                <td >民族</td>
+                                <td width="50px">${student.national}</td>
+                                <td >出生日期</td>
+                                <td width="100px">${student.birth}</td>
+                                <td>邮政编码</td>
+                                <td>${student.postal_code}</td>
+                                <td >籍贯</td>
+                                <td width="100px">${student.place}</td>
+                            </tr>
 
 
-                <tr class="success">
-                    <td >身份证号</td>
-                    <td colspan="3">${student.id_card}</td>
-                    <td>电子邮箱</td>
-                    <td colspan="3">${student.email}</td>
-                </tr>
+                            <tr class="info">
+                                <td >身份证号</td>
+                                <td colspan="3">${student.id_card}</td>
+                                <td>电子邮箱</td>
+                                <td colspan="3">${student.email}</td>
+                            </tr>
 
-            </table>
-    
-</div>
+                        </table>
+
+            </div>
+
+
 </body>
 </html>

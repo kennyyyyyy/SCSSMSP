@@ -66,6 +66,8 @@
               $('#admission_data').val(admission_data);
               $('#graduation_data').val(graduation_data);
               $('#major').val(major);
+
+
               /*  $.ajax({
                     url:"status",//请求的url地址
                     type:"post",//请求方式
@@ -112,6 +114,8 @@
                             ((($(obj).parents("td")).siblings()).eq(3)).html(admission_data);
                             ((($(obj).parents("td")).siblings()).eq(4)).html(graduation_data);
                             ((($(obj).parents("td")).siblings()).eq(5)).html(major);
+                          //  $( "#sname" ).attr( "placeholder" , sname );
+                           // $( "#major" ).attr( "placeholder" , major );
                             toastr.success("修改成功");
                         }else {
                             //审核失败： 1关闭对话框 2 提示用户审核失败
