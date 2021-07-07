@@ -25,7 +25,7 @@
   <div>
 
     <div style="float: right">
-      <a class="btn btn-default active" href="../searchStudentPage?pageNum=1&inputInfo=" role="button">返回</a>
+      <a class="btn btn-info active" href="../searchStudentPage?pageNum=1&inputInfo=" role="button">返回</a>
     </div>
     <div class="clearfix"></div>
   </div>

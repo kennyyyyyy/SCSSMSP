@@ -36,126 +36,117 @@
         var cno = 0;
         var grade = 0;
         //jquery ready函数
-        $(function (){
-            $('#ok').click(function (){
+        $(function () {
+            $('#ok').click(function () {
 
-            //     $.ajax({
-            //         url:"del",//请求的url地址
-            //         type:"post",//请求方式
-            //         candidateType:"json",//json传输格式
-            //         async:true,//是否异步传输
-            //         data:"sno="+sno+"&cno="+cno,//传入的参数
-            //         success:function (data){ //接受服务端响应的数据
-            //             if (data == 1) {
-            //                 //审核成功：1把当前的对话框关闭 2 把审核按钮变成审核文字
-            //                 (($(obj).parents("tr"))).html(null);
-            //                 toastr.success("删除成功");
-            //             }else {
-            //                 //审核失败： 1关闭对话框 2 提示用户审核失败
-            //                 toastr.warning("服务器异常，审核失败");
-            //             }
-            //             $('#myModal').modal('hide');
-            //         }
-            //     })
-            // })
-        })
+                //     $.ajax({
+                //         url:"del",//请求的url地址
+                //         type:"post",//请求方式
+                //         candidateType:"json",//json传输格式
+                //         async:true,//是否异步传输
+                //         data:"sno="+sno+"&cno="+cno,//传入的参数
+                //         success:function (data){ //接受服务端响应的数据
+                //             if (data == 1) {
+                //                 //审核成功：1把当前的对话框关闭 2 把审核按钮变成审核文字
+                //                 (($(obj).parents("tr"))).html(null);
+                //                 toastr.success("删除成功");
+                //             }else {
+                //                 //审核失败： 1关闭对话框 2 提示用户审核失败
+                //                 toastr.warning("服务器异常，审核失败");
+                //             }
+                //             $('#myModal').modal('hide');
+                //         }
+                //     })
+                // })
+            })
 
 
-        $(function (){
-            $('#fine').click(function (){
-                grade = $('#grade').val();
-                $.ajax({
-                    url:"updateGrade",//请求的url地址
-                    type:"post",//请求方式
-                    candidateType:"json",//json传输格式
-                    async:true,//是否异步传输
-                    data:"sno="+sno+"&cno="+cno+"&grade="+grade,//传入的参数
-                    success:function (data){ //接受服务端响应的数据
-                        if (data == 1) {
-                            //审核成功：1把当前的对话框关闭 2 把审核按钮变成审核文字
-                            ((($(obj).parents("td")).siblings()).eq(3)).html(grade);
-                            var grade_point = grade;
-                            if (grade_point < 60) {
-                                ((($(obj).parents("td")).siblings()).eq(4)).html("0");
-                            }
-                            else if (grade_point >=60 && grade_point <=62) {
-                                ((($(obj).parents("td")).siblings()).eq(4)).html("1.0");
-                            }
-                            else if (grade_point >62 && grade_point <= 65) {
-                                ((($(obj).parents("td")).siblings()).eq(4)).html("1.3");
-                            }
-                            else if (grade_point >65 && grade_point <=69){
-                                ((($(obj).parents("td")).siblings()).eq(4)).html("1.7");
-                            }
-                            else if (grade_point > 69 && grade_point <= 72) {
-                                ((($(obj).parents("td")).siblings()).eq(4)).html("2.0");
-                            }
-                            else if (grade_point > 72 && grade_point<= 75) {
-                                ((($(obj).parents("td")).siblings()).eq(4)).html("2.3");
-                            }
-                            else if (grade_point > 75 && grade_point <= 79) {
-                                ((($(obj).parents("td")).siblings()).eq(4)).html("2.7");
-                            }
-                            else if (grade_point > 79 && grade_point <= 82) {
-                                ((($(obj).parents("td")).siblings()).eq(4)).html("3.0");
-                            }
-                            else if (grade_point > 82 && grade_point <= 85) {
-                                ((($(obj).parents("td")).siblings()).eq(4)).html("3.3");
-                            }
-                            else if (grade_point > 85 && grade_point <= 89) {
-                                ((($(obj).parents("td")).siblings()).eq(4)).html("3.7");
-                            }
-                            else if (grade_point > 89 && grade_point <= 100) {
-                                ((($(obj).parents("td")).siblings()).eq(4)).html("4.0");
-                            }
+            $(function () {
+                $('#fine').click(function () {
+                    grade = $('#grade').val();
+                    $.ajax({
+                        url: "updateGrade",//请求的url地址
+                        type: "post",//请求方式
+                        candidateType: "json",//json传输格式
+                        async: true,//是否异步传输
+                        data: "sno=" + sno + "&cno=" + cno + "&grade=" + grade,//传入的参数
+                        success: function (data) { //接受服务端响应的数据
+                            if (data == 1) {
+                                //审核成功：1把当前的对话框关闭 2 把审核按钮变成审核文字
+                                ((($(obj).parents("td")).siblings()).eq(3)).html(grade);
+                                var grade_point = grade;
+                                if (grade_point < 60) {
+                                    ((($(obj).parents("td")).siblings()).eq(4)).html("0");
+                                } else if (grade_point >= 60 && grade_point <= 62) {
+                                    ((($(obj).parents("td")).siblings()).eq(4)).html("1.0");
+                                } else if (grade_point > 62 && grade_point <= 65) {
+                                    ((($(obj).parents("td")).siblings()).eq(4)).html("1.3");
+                                } else if (grade_point > 65 && grade_point <= 69) {
+                                    ((($(obj).parents("td")).siblings()).eq(4)).html("1.7");
+                                } else if (grade_point > 69 && grade_point <= 72) {
+                                    ((($(obj).parents("td")).siblings()).eq(4)).html("2.0");
+                                } else if (grade_point > 72 && grade_point <= 75) {
+                                    ((($(obj).parents("td")).siblings()).eq(4)).html("2.3");
+                                } else if (grade_point > 75 && grade_point <= 79) {
+                                    ((($(obj).parents("td")).siblings()).eq(4)).html("2.7");
+                                } else if (grade_point > 79 && grade_point <= 82) {
+                                    ((($(obj).parents("td")).siblings()).eq(4)).html("3.0");
+                                } else if (grade_point > 82 && grade_point <= 85) {
+                                    ((($(obj).parents("td")).siblings()).eq(4)).html("3.3");
+                                } else if (grade_point > 85 && grade_point <= 89) {
+                                    ((($(obj).parents("td")).siblings()).eq(4)).html("3.7");
+                                } else if (grade_point > 89 && grade_point <= 100) {
+                                    ((($(obj).parents("td")).siblings()).eq(4)).html("4.0");
+                                }
 
-                            toastr.success("修改成绩成功");
-                        }else {
-                            //审核失败： 1关闭对话框 2 提示用户审核失败
-                            toastr.warning("服务器异常，修改成绩失败");
+                                toastr.success("修改成绩成功");
+                            } else {
+                                //审核失败： 1关闭对话框 2 提示用户审核失败
+                                toastr.warning("服务器异常，修改成绩失败");
+                            }
+                            $('#update').modal('hide');
                         }
-                        $('#update').modal('hide');
-                    }
+                    })
                 })
             })
+
+            function modify() {
+                $('#update').modal('show')
+                $('#grade').val(grade);
+                /* $.ajax({
+                     url:"del",//请求的url地址
+                     type:"post",//请求方式
+                     candidateType:"json",//json传输格式
+                     async:true,//是否异步传输
+                     data:"grade="+grade,//传入的参数
+                     success:function (data){ //接受服务端响应的数据
+                         if (data == 1) {
+                             $('#grade').val(grade);
+
+                         }else {
+                             //审核失败： 1关闭对话框 2 提示用户审核失败
+                             toastr.warning("服务器异常，审核失败");
+                         }
+
+                     }
+                 })*/
+            }
+
+            function showd(sno_, obj_, cno_) {
+                sno = sno_;
+                obj = obj_;
+                cno = cno_;
+                $('#myModal').modal('show');
+            }
+
+            function show2(sno_, obj_, cno_, grade_) {
+                sno = sno_;
+                obj = obj_;
+                cno = cno_;
+                grade = grade_;
+                modify();
+            }
         })
-
-        function modify(){
-            $('#update').modal('show')
-            $('#grade').val(grade);
-           /* $.ajax({
-                url:"del",//请求的url地址
-                type:"post",//请求方式
-                candidateType:"json",//json传输格式
-                async:true,//是否异步传输
-                data:"grade="+grade,//传入的参数
-                success:function (data){ //接受服务端响应的数据
-                    if (data == 1) {
-                        $('#grade').val(grade);
-
-                    }else {
-                        //审核失败： 1关闭对话框 2 提示用户审核失败
-                        toastr.warning("服务器异常，审核失败");
-                    }
-
-                }
-            })*/
-        }
-
-        function showd(sno_, obj_, cno_) {
-            sno = sno_;
-            obj = obj_;
-            cno = cno_;
-            $('#myModal').modal('show');
-        }
-
-        function show2(sno_, obj_, cno_, grade_) {
-            sno = sno_;
-            obj = obj_;
-            cno = cno_;
-            grade = grade_;
-            modify();
-        }
     </script>
 </head>
 <body>
@@ -175,12 +166,12 @@
         </div>
 
         <div style="float: right">
-             <a class="btn btn-default active" href="${pageContext.request.contextPath }/webadmin/adminGradeAdd.jsp" role="button">导入学生成绩信息</a>
+             <a class="btn btn-info active" href="${pageContext.request.contextPath }/webadmin/adminGradeAdd.jsp" role="button">导入学生成绩信息</a>
         </div>
     </div>
     <div class="middle">
         <table class="table table-bordered" style=" overflow-x: hidden " >
-            <tr class="success">
+            <tr class="active">
                 <th>序号</th>
                 <th>学号</th>
                 <th>课程编号</th>
@@ -190,7 +181,12 @@
             </tr>
 
             <c:forEach items="${scoreList}" var="score" varStatus="status">
-                <tr class="success">
+                <c:if test="${status.index%2==0}">
+                    <tr class="info">
+                </c:if>
+                <c:if test="${status.index%2==1}">
+                    <tr>
+                </c:if>
                     <td>${status.index }</td>
                     <td>${score.sno }</td>
                     <td>${score.cno }</td>

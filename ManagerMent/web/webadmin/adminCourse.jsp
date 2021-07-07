@@ -44,7 +44,7 @@
                             <option value="2">专业课</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-default">搜索</button>
+                    <button type="submit" class="btn btn-info">搜索</button>
                 </form>
             </div>
 
@@ -54,7 +54,7 @@
         </div>
         <div class="middle">
             <table class="table table-bordered" style=" overflow-x: hidden " >
-                <tr class="success">
+                <tr class="active">
                     <th>序号</th>
                     <th>课程编号</th>
                     <th>课程名称</th>
@@ -63,7 +63,12 @@
                     <th>操作</th>
                 </tr>
                 <c:forEach items="${courseList}" var="course" varStatus="status">
-                    <tr class="success">
+                    <c:if test="${status.index%2==0}">
+                        <tr class="info">
+                    </c:if>
+                    <c:if test="${status.index%2==1}">
+                        <tr>
+                    </c:if>
                         <td>${status.index }</td>
                         <td>${course.cno }</td>
                         <td>${course.cname }</td>

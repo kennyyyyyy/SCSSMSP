@@ -120,7 +120,7 @@
     <!--  毕业学生信息  -->
     <servlet>
         <servlet-name>GraduationServlet</servlet-name>
-        <servlet-class>Control.GraduationServlet</servlet-class>
+        <servlet-class>Control.StudentServlet.GraduationServlet</servlet-class>
     </servlet>
 
 
@@ -135,6 +135,13 @@
         <servlet-name>SearchStudentPageServlet</servlet-name>
         <servlet-class>Control.AdminServlet.Search.SearchStudentPageServlet</servlet-class>
     </servlet>
+
+    <!--  审核  -->
+    <servlet>
+        <servlet-name>searchStudentBySnoServlet</servlet-name>
+        <servlet-class>Control.AdminServlet.searchStudentBySnoServlet</servlet-class>
+    </servlet>
+
 
     <!-- 学生修改密码   -->
     <servlet>
@@ -282,5 +289,12 @@
         <servlet-name>ModifyPwdByStuServlet</servlet-name>
         <url-pattern>/modify</url-pattern>
     </servlet-mapping>
+
+    <!--  审核  -->
+    <servlet-mapping>
+        <servlet-name>searchStudentBySnoServlet</servlet-name>
+        <url-pattern>/searchSno</url-pattern>
+    </servlet-mapping>
+
 
 </web-app>

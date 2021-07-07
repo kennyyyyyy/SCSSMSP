@@ -36,7 +36,7 @@
         <table class="table table-bordered" style=" overflow-x: hidden" >
         <h4 style="float:left;">谭懿</h4>
         <h4 style="float:right;">201908010327</h4>
-        <tr class="success">
+        <tr class="info">
             <th width="82px" style="text-align: center">籍贯</th>
             <th width="100px" style="text-align: center">出生日期</th>
             <th width="50px" style="text-align: center">民族</th>
@@ -45,18 +45,18 @@
             <th  style="text-align: center">照片</th>
 
         </tr>
-        <tr class="success">
+        <tr class="info">
 
             <td>湖南郴州</td>
             <td>2001-10-03</td>
             <td>汉族</td>
             <td>2801916353@qq.com</td>
             <td>423000</td>
-
+            <td><input type="hidden" name="photos" id="photos"></td>
 
         </tr>
 
-        <tr class="success">
+        <tr class="info">
             <td>
                 <button class="btn btn-primary btn-xs">修改</button>
             </td>
@@ -72,16 +72,18 @@
             <td>
                 <button class="btn btn-primary btn-xs">修改</button>
             </td>
+            <td>
+                <div class="col-sm-10">
+                    <input id="custom_indexfile_upload" type="file" name="filedata" />
+                    <div id="showimg"></div>
 
+                </div>
+            </td>
         </tr>
 
     </table>
     </div>
-    <div class="col-sm-10">
-        <input id="custom_indexfile_upload" type="file" name="filedata" />
-        <div id="showimg"></div>
-        <input type="hidden" name="photos" id="photos">
-    </div>
+
 </div>
 
 

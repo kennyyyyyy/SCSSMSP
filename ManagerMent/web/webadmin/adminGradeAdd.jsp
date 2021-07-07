@@ -35,7 +35,7 @@
 <div class="container-fluid">
 
     <div style="float: right">
-      <a class="btn btn-default active" href="../adminGrade" role="button">返回</a>
+      <a class="btn btn-info active" href="../adminGrade" role="button">返回</a>
     </div>
 
     <div class="clearfix"></div>

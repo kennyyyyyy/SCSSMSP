@@ -127,10 +127,46 @@
             })
         })
 
+        function setvalue(sno){
+            $.ajax({
+                unicode:"utf8",
+                url:"searchSno",//请求的url地址
+                type:"post",//请求方式
+                candidateType:"json",//json传输格式
+                async:true,//是否异步传输
+                data:"sno="+sno,//传入的参数
+                success:function (data){ //接受服务端响应的数据
+
+                    if(data != null ){
+                        var list = data.split(",");
+                        var place = list[0];
+                        var national = list[1];
+                        var birth = list[2];
+                        var email = list[3];
+                        var poatal_code = list[4];
+                        var photo = list[5];
+
+                        $("#place").text(place) ;
+                        $("#national").text(national);
+                        $("#birth").text(birth);
+                        $("#email").text(email);
+                        $("#poatal_code").text(poatal_code);
+                        var str = "/images/" + photo;
+                        $("#photo").html("<img src=" + str + " style='width = 80px;height:100px' >");
+
+                    }else {
+                        toastr.warning("服务器异常");
+                    }
+
+                }
+            })
+        }
+
         function showd(sno_, obj_) {
             sno = sno_;
             obj = obj_;
             $('#myModal').modal('show');
+            setvalue(sno)
         }
         function show2(sno_, obj_, sex_, sname_, admission_data_, graduation_data_, major_) {
             sno = sno_;
@@ -177,7 +213,7 @@
     </div>
     <div class="clearfix"></div>
     <table class="table table-bordered" style=" overflow-x: hidden" >
-          <tr class="success">
+          <tr class="active">
             <th style="text-align: center">学号</th>
             <th style="text-align: center">性别</th>
             <th style="text-align: center">姓名</th>
@@ -187,8 +223,13 @@
             <th style="text-align: center">操作</th>
 
           </tr>
-          <c:forEach items="${studentList }" var="student">
-            <tr class="success">
+          <c:forEach items="${studentList }" var="student" varStatus="statusline">
+          <c:if test="${statusline.index%2==0}">
+            <tr class="info">
+          </c:if>
+          <c:if test="${statusline.index%2==1}">
+            <tr>
+          </c:if>
             <td>${student.sno}</td>
             <td>${student.sex==1?"男":"女"}</td>
             <td>${student.sname}</td>
@@ -275,10 +316,43 @@
         <div class="modal-content">
         <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">温馨提示</h4>
+        <h4 class="modal-title" id="myModalLabel">是否审核通过</h4>
         </div>
-        <div class="modal-body">
-        是否审核通过
+        <div >
+            <div class="col-sm-12">
+                <label class="col-sm-4 control-label right">籍贯</label>
+                <span id="place">fdas </span>
+            </div>
+        </div>
+        <div>
+            <div class="col-sm-12">
+                <label class="col-sm-4 control-label right">出身日期</label>
+                <span id="national">dfasdsa</span>
+            </div>
+        </div>
+        <div>
+            <div class="col-sm-12">
+                <label  class="col-sm-4 control-label right">民族</label>
+                <span id="birth">gdsafewad</span>
+            </div>
+        </div>
+        <div>
+            <div class="col-sm-12">
+                <label class="col-sm-4 control-label right">电子邮件</label>
+                <span id="email">dfsafsdag</span>
+            </div>
+        </div>
+        <div>
+            <div class="col-sm-12">
+                <label class="col-sm-4 control-label right">邮政编码</label>
+                <span id="poatal_code">fdasfewawff</span>
+            </div>
+        </div>
+        <div>
+            <div class="col-sm-12">
+                <label class="col-sm-4 control-label right">照片</label>
+                <span id="photo">sagerrfesa</span>
+            </div>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>

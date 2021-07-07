@@ -1,4 +1,4 @@
-package Control;
+package Control.StudentServlet;
 
 import Bean.GraduationStudent;
 import Bean.Student;

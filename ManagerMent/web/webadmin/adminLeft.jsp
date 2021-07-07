@@ -33,6 +33,7 @@
     <a href="searchStudentPage?pageNum=1&inputInfo=" class="list-group-item active">学籍信息管理</a>
     <a href="adminCourse" class="list-group-item">课程信息管理</a>
     <a href="adminGrade" class="list-group-item">成绩管理</a>
+    <a href="webadmin/adminGraduationAdd.jsp" class="list-group-item">毕业信息添加</a>
   </div>
 
 </body>

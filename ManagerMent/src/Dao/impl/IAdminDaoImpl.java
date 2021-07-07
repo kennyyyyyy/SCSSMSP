@@ -341,22 +341,27 @@ public class IAdminDaoImpl implements IAdminDao {
         try{
             conn = DBConUtil.getConn();
 
+            String sno = student.getSno();
             String info  = student.getSearchInfo();
             String sql;
             int status;
 
             if(info.equals("未审核") || info.equals("已审核")) {
                 status = info.equals("未审核")?0:1;
-                sql = "select sno, sex, sname, admission_data, graduation_data, major, status from student where status=?";
+                sql = "select sno, sex, sname, place, birth, national, admission_data, graduation_flag, graduation_data, major, id_card, email, postal_code, password, status, photo from student where status=?";
 
                 pstmt = conn.prepareStatement(sql);
 
                 pstmt.setInt(1, status);
-            }else{
+            }else if(sno != null && sno != ""){
+                sql  = "select sno, sex, sname, place, birth, national, admission_data, graduation_flag, graduation_data, major, id_card, email, postal_code, password, status, photo from student where sno=?";
+                pstmt = conn.prepareStatement(sql);
+                pstmt.setString(1, sno);
+            } else{
                 info = info.trim();
                 info = "%" + info + "%";
 
-                sql = "select sno, sex, sname, admission_data, graduation_data, major, status from student where sno like ? or sname like ? or student.admission_data like ? or graduation_data like ? or major like ?";
+                sql = "select sno, sex, sname, place, birth, national, admission_data, graduation_flag, graduation_data, major, id_card, email, postal_code, password, status, photo from student where sno like ? or sname like ? or student.admission_data like ? or graduation_data like ? or major like ?";
 
                 pstmt = conn.prepareStatement(sql);
 
@@ -378,7 +383,13 @@ public class IAdminDaoImpl implements IAdminDao {
                 studenttp.setAdmission_data(rs.getString("admission_data"));
                 studenttp.setGraduation_data(rs.getString("graduation_data"));
                 studenttp.setMajor(rs.getString("major"));
-                studenttp.setStatus(rs.getInt("status"));
+
+                studenttp.setPlace(rs.getString("place"));
+                studenttp.setBirth(rs.getString("birth"));
+                studenttp.setNational(rs.getString("national"));
+                studenttp.setPostal_code(rs.getString("postal_code"));
+                studenttp.setPhoto(rs.getString("photo"));
+                studenttp.setEmail(rs.getString("email"));
                 studentList.add(studenttp);
             }
         }catch (Exception e){
@@ -390,7 +401,8 @@ public class IAdminDaoImpl implements IAdminDao {
     }
 
     @Override
-    public int updateAllByAdmin(String sno, int sex, String sname, String admission_data, String graduation_data, String major) {
+    public int updateAllByAdmin(String sno, int sex, String sname, String admission_data, String graduation_data, String major){
+        System.out.println(graduation_data);
         Connection conn = DBConUtil.getConn();
         PreparedStatement pstmt = null;
         if (graduation_data.equals(null) || graduation_data =="") {

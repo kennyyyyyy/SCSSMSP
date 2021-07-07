@@ -43,13 +43,13 @@
       </div>
       <div class="middle">
         <table class="table table-bordered" style=" overflow-x: hidden " >
-          <tr class="success">
+          <tr class="info">
             <th width="85px" style="text-align: center">课程编号</th>
             <th width="85px" style="text-align: center">课程名称</th>
             <th width="25px" style="text-align: center">成绩</th>
 
           </tr>
-          <tr class="success">
+          <tr class="">
             <td>12345</td>
             <td>java程序设计</td>
             <td>88</td>

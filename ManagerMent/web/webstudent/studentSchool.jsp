@@ -32,38 +32,37 @@
 </head>
 <body>
 
-            <div class="container" style="text-align: center;width: 1000px" >
-                        <h2>学籍卡片</h2>
-                        <table class="table table-bordered" style=" overflow-x: hidden " >
-                            <tr class="info" >
-                                <td><img src="/images/${student.photo}" width="100px" height="55px"></td>
-                                <td >姓名</td>
-                                <td width="80px">${student.sname}</td>
-                                <td >姓别</td>
-                                <td width="50px">${student.sex==1?"男":"女"}</td>
-                                <td >学号</td>
-                                <td width="125px" colspan="2">${student.sno}</td>
+<div class="container" style="text-align: center;width: 1000px" >
+            <h2>学籍卡片</h2>
+            <table class="table table-bordered" style=" overflow-x: hidden " >
+                <tr class="info" >
+                    <td><img src="/images/${student.photo}" style="width: 100px;height: 80px"></td>
+                    <td >姓名</td>
+                    <td>${student.sname}</td>
+                    <td >姓别</td>
+                    <td>${student.sex==1?"男":"女"}</td>
+                    <td >学号</td>
+                    <td colspan="2">${student.sno}</td>
+                </tr>
 
-                            </tr>
-
-                            <tr class="info">
-                                <td >民族</td>
-                                <td width="50px">${student.national}</td>
-                                <td >出生日期</td>
-                                <td width="100px">${student.birth}</td>
-                                <td>邮政编码</td>
-                                <td>${student.postal_code}</td>
-                                <td >籍贯</td>
-                                <td width="100px">${student.place}</td>
-                            </tr>
+                <tr class="info">
+                    <td >民族</td>
+                    <td >${student.national}</td>
+                    <td >出生日期</td>
+                    <td>${student.birth}</td>
+                    <td>邮政编码</td>
+                    <td>${student.postal_code}</td>
+                    <td >籍贯</td>
+                    <td >${student.place}</td>
+                </tr>
 
 
-                            <tr class="info">
-                                <td >身份证号</td>
-                                <td colspan="3">${student.id_card}</td>
-                                <td>电子邮箱</td>
-                                <td colspan="3">${student.email}</td>
-                            </tr>
+                <tr class="info">
+                    <td >身份证号</td>
+                    <td colspan="3">${student.id_card}</td>
+                    <td>电子邮箱</td>
+                    <td colspan="3">${student.email}</td>
+                </tr>
 
                         </table>
 

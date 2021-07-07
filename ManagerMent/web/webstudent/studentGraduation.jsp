@@ -29,7 +29,7 @@
 <div class="container" style="text-align: center;width: 1000px" >
                       <h2>毕业情况查询</h2>
   <table class="table table-bordered" style=" overflow-x: hidden " >
-    <tr class="success" >
+    <tr class="info" >
       <td>毕业届别</td>
       <td >毕业类型</td>
       <td>毕业结论</td>

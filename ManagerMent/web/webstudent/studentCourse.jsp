@@ -43,14 +43,14 @@
   </div>
   <div class="middle">
     <table class="table table-bordered" style=" overflow-x: hidden " >
-      <tr class="success">
+      <tr class="info">
         <th width="85px" style="text-align: center">课程编号</th>
         <th width="150px" style="text-align: center">课程名称</th>
         <th width="150px" style="text-align: center">开课时间</th>
         <th width="85px" style="text-align: center">课程性质</th>
         <th width="20px" style="text-align: center">学分</th>
       </tr>
-      <tr class="success">
+      <tr class="">
         <td>12345</td>
         <td>java设计与开发</td>
         <td>2020上半年</td>
