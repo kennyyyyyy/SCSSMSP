@@ -27,9 +27,28 @@
         fff
       </div>
       <div class="col-md-8 col-xs-8" style="background-color: darkgrey; height: 100%">
-        <div class="box" style="height: 50%; background-color: #843534">
-          fff
+        <div class="box" style="height: 100%; background-color: #843534;margin-left: 0;margin-left: 0" >
+            <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000" >
+                <!-- 轮播（Carousel）指标 -->
+
+                <!-- 轮播（Carousel）项目 -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="images/index/a.jpg" alt="First slide" style="width: 100%; height: 700px">
+                    </div>
+                    <div class="item">
+                        <img src="images/index/b.jpg" alt="Second slide" style="width:100%; height: 700px">
+                    </div>
+                    <div class="item">
+                        <img src="images/index/c.jpg" alt="Third slide" style="width: 100%; height: 700px">
+                    </div>
+                </div>
+                <a class="carousel-control left" href="#myCarousel" data-slide="prev"></a>
+                <a class="carousel-control right" href="#myCarousel" data-slide="next"></a>
+
+            </div>
         </div>
+
         <div class="center-buttom">
           fff
         </div>
