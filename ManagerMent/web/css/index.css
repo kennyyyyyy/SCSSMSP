@@ -1,0 +1,21 @@
+body{
+    margin: 0 auto;
+    padding: 0;
+}
+
+.notice{
+    margin: 10px 0 0 0;
+    padding: 0 5px 0 0;
+}
+
+.notice>li{
+    list-style: none;
+    font-size: 15px;
+    font-weight: 500;
+
+    margin: 15px 0;
+}
+
+span>img{
+    margin-right: 5px;
+}
