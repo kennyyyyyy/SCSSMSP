@@ -31,26 +31,27 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="cname" class="col-sm-2 control-label">毕业类型</label>
+                    <label for="type" class="col-sm-2 control-label">毕业类型</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="cname" name="cname" placeholder="毕业类型">
-                    </div>
-                </div>
-                <label for="cname" class="col-sm-2 control-label">毕业时间</label>
-                <div class="col-sm-10">
-                    <input type="date" class="form-control" id="time" name="cname" placeholder="毕业类型">
-                </div>
-
-                <div class="form-group">
-                    <label for="credits" class="col-sm-2 control-label">毕业编号</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="credits" name="credits" placeholder="毕业编号">
+                        <input type="text" class="form-control" id="type" name="type" placeholder="毕业类型">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="credits" class="col-sm-2 control-label">毕业届别</label>
+                    <label for="time" class="col-sm-2 control-label">毕业时间</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="class" name="credits" placeholder="毕业届别">
+                        <input type="date" class="form-control" id="time" name="time" placeholder="毕业类型">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="num" class="col-sm-2 control-label">毕业编号</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="num" name="num" placeholder="毕业编号">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="class" class="col-sm-2 control-label">毕业届别</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="class" name="class" placeholder="毕业届别">
                     </div>
                 </div>
 

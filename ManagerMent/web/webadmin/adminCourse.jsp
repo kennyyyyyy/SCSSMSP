@@ -44,12 +44,12 @@
                             <option value="2">专业课</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-info">搜索</button>
+                    <button type="submit" class="btn btn-default">搜索</button>
                 </form>
             </div>
 
             <div style="float: right">
-                <a class="btn btn-default active" href="${pageContext.request.contextPath}/webadmin/adminCourseAdd.jsp" role="button">导入课程信息</a>
+                <a class="btn btn-info active" href="${pageContext.request.contextPath}/webadmin/adminCourseAdd.jsp" role="button">导入课程信息</a>
             </div>
         </div>
         <div class="middle">

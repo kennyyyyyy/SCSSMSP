@@ -59,8 +59,7 @@
                 //     })
                 // })
             })
-
-
+        })
             $(function () {
                 $('#fine').click(function () {
                     grade = $('#grade').val();
@@ -146,7 +145,7 @@
                 grade = grade_;
                 modify();
             }
-        })
+
     </script>
 </head>
 <body>

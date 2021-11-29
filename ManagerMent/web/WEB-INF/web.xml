@@ -146,7 +146,7 @@
     <!-- 学生修改密码   -->
     <servlet>
         <servlet-name>ModifyPwdByStuServlet</servlet-name>
-        <servlet-class>Control.ModifyPwdByStuServlet</servlet-class>
+        <servlet-class>Control.StudentServlet.ModifyPwdByStuServlet</servlet-class>
     </servlet>
 
 

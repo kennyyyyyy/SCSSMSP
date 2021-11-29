@@ -17,10 +17,11 @@ public class LoginOutServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
 
+        //移除前端页面中stduent和admin的信息
         req.getSession().removeAttribute("student");
         req.getSession().removeAttribute("admin");
-
-        resp.sendRedirect("index.jsp");
+        //重定向到登录页面
+        resp.sendRedirect("login.jsp");
 
     }
 }

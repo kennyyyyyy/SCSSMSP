@@ -39,7 +39,7 @@ public class ImportStudentServlet extends HttpServlet {
 
         if(result){
             //跳转到学籍管理首页
-            req.getRequestDispatcher("adminAudit").forward(req, resp);
+            req.getRequestDispatcher("searchStudentPage?pageNum=1&inputInfo=").forward(req, resp);
         } else {
             req.getRequestDispatcher("webadmin/adminAdd.jsp").forward(req, resp);
         }

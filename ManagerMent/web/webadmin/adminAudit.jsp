@@ -127,6 +127,15 @@
             })
         })
 
+        function isEmpty(obj){
+            console.log(typeof(obj))
+            if(obj == null || obj.length == 0 || obj == ""|| obj == "null"){
+                return true;
+            }else{
+                return false;
+            }
+        }
+
         function setvalue(sno){
             $.ajax({
                 unicode:"utf8",
@@ -145,14 +154,41 @@
                         var email = list[3];
                         var poatal_code = list[4];
                         var photo = list[5];
+                        var empty = "学生未填写"
 
-                        $("#place").text(place) ;
-                        $("#national").text(national);
-                        $("#birth").text(birth);
-                        $("#email").text(email);
-                        $("#poatal_code").text(poatal_code);
-                        var str = "/images/" + photo;
-                        $("#photo").html("<img src=" + str + " style='width = 80px;height:100px' >");
+                        // alert(place + ", " + national + ", " + birth + ", " + email + ", " + poatal_code + ", " + photo);
+
+                        if(isEmpty(place)){
+                            $("#place").text(empty) ;
+                        }else{
+                            $("#place").text(place) ;
+                        }
+                        if(isEmpty(national )){
+                            $("#national").text(empty);
+                        }else{
+                            $("#national").text(national);
+                        }
+                        if(isEmpty(birth )){
+                            $("#birth").text(empty);
+                        }else{
+                            $("#birth").text(birth);
+                        }
+                        if(isEmpty(email )){
+                            $("#email").text(empty);
+                        }else{
+                            $("#email").text(email);
+                        }
+                        if(isEmpty(poatal_code )){
+                            $("#poatal_code").text(empty);
+                        }else{
+                            $("#poatal_code").text(poatal_code);
+                        }
+                        if(isEmpty(photo )){
+                            $("#photo").text(empty);
+                        }else{
+                            var str = "/images/" + photo;
+                            $("#photo").html("<img src=" + str + " style='width = 80px;height:100px' >");
+                        }
 
                     }else {
                         toastr.warning("服务器异常");
@@ -212,7 +248,7 @@
       </div>
     </div>
     <div class="clearfix"></div>
-    <table class="table table-bordered" style=" overflow-x: hidden" >
+    <table class="table table-bordered" style=" overflow-x: hidden; height: auto" >
           <tr class="active">
             <th style="text-align: center">学号</th>
             <th style="text-align: center">性别</th>
@@ -260,7 +296,7 @@
             </tr>
           </c:forEach>
       </table>
-    <div class="text-center" style="position: absolute; left: 40%; bottom: 15%">
+    <div class="text-center" style="position: absolute; right: 45%; bottom: 8%">
           <%-- 构建分页导航 --%>
           共有${pageBean.totalRecord}个学生，共${pageBean.totalPage }页，当前为${pageBean.pageNum}页
           <br/>

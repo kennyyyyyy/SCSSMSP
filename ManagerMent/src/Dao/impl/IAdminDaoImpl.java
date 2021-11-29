@@ -137,6 +137,7 @@ public class IAdminDaoImpl implements IAdminDao {
     存在为false
     不存在为true
      */
+    @Override
     public boolean checkSno(String sno){
         PreparedStatement pstmt = null;
         Connection conn = null;
@@ -171,6 +172,7 @@ public class IAdminDaoImpl implements IAdminDao {
     存在为false
     不存在为true
      */
+    @Override
     public boolean checkCno(String cno){
         PreparedStatement pstmt = null;
         Connection conn = null;
@@ -443,8 +445,6 @@ public class IAdminDaoImpl implements IAdminDao {
             return i;
         }
     }
-
-
 
     @Override
     public int resetPwdByAdmin(String sno) {

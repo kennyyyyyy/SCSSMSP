@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="css/left.css">
     <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="bootstrap-3.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.validate.js"></script>
     <!--jquery提示筐插件-->
     <link rel="stylesheet" href="../toastr/toastr.css">
     <script type="text/javascript" src="../toastr/toastr.js"></script>
@@ -35,28 +36,45 @@
         }
         $(function (){
             $('#ok').click(function (){
-                password = $('#password').val();
+                var password = $('#password').val();
+                var password1 = $('#password1').val();
                 $.ajax({
                     url:"modify",//请求的url地址
                     type:"post",//请求方式
                     candidateType:"json",//json传输格式
                     async:true,//是否异步传输
-                    data:"sno="+sno+"&password="+password,//传入的参数
+                    data:{
+                        "sno":sno,
+                        "password":password,//传入的参数
+                        "password1":password1
+                    },
                     success:function (data){ //接受服务端响应的数据
-                        if (data == 1) {
+                        list = data.split(",");
+                        var suc = list[0];
+                        var info = list[1];
+                        if (suc == 1) {
                             //审核成功：1把当前的对话框关闭 2 把审核按钮变成审核文字
-                            toastr.success("修改新密码成功");
+                            $('#myModal').modal('hide');
+                            window.location.href = "login.jsp";
+                            alert("密码修改成功！请重新登录");
                         }else {
+
                             //审核失败： 1关闭对话框 2 提示用户审核失败
-                            toastr.warning("服务器异常,修改密码失败");
+                            toastr.warning(info);
                         }
-                        $('#myModal').modal('hide');
-                        alert(password);
+
                     }
                 })
             })
         })
 
+
+        function loginout(){
+            $.ajax({
+                url:"loginOut",//请求的url地址
+                type:"post",//请求方式
+            })
+        }
     </script>
 
 </head>
@@ -72,7 +90,7 @@
           <jsp:include page="webstudent/studentLeft.jsp"></jsp:include>
           </div>
           <div class="col-xs-8 col-md-10" style="margin-top: 54px;">
-              <iframe src="webstudent/studentSchool.jsp" frameborder="0" frameBorder="0" marginwidth="0px" width="100%" height="100%" name="rightFrame" id="rightFrame" style="margin-top: 30px"></iframe>
+              <iframe src="webstudent/studentSchool.jsp" frameborder="0" frameBorder="0" marginwidth="0px" width="100%" height="88%" name="rightFrame" id="rightFrame" style="margin-top: 30px"></iframe>
           </div>
       </div>
   </div>
@@ -85,28 +103,19 @@
       <div class="modal-dialog" role="document">
           <div class="modal-content">
               <div class="modal-header">
-                  <%--                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>--%>
-                  <h4 class="modal-title" id="myModalLabel">您还未修改密码，请修改默认密码</h4>
+                 <h4 class="modal-title" id="myModalLabel">您还未修改密码，请修改默认密码</h4>
               </div>
-
-
                   <div >
                       <label for="password" class="col-sm-4 control-label">请输入新的密码</label>
-
-                          <input type="text" class="form-control" id="password" name="password" >
-
+                      <input type="password" class="form-control" id="password" name="password" >
                   </div>
                   <div style="margin-top: 10px;">
                       <label for="password1" class="col-sm-4 control-label">请确认新的密码</label>
-
-                          <input type="text" class="form-control" id="password1" name="password1" >
+                      <input type="password" class="form-control" id="password1" name="password1" >
                   </div>
-
-
-              <div class="modal-footer">
-                  <%--                            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>--%>
-                  <button type="button" class="btn btn-primary" id="ok">通过</button>
-              </div>
+                  <div class="modal-footer">
+                      <button type="submit" class="btn btn-primary" id="ok">通过</button>
+                  </div>
           </div>
       </div>
   </div>
