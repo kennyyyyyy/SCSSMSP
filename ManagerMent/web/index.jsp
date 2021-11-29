@@ -54,8 +54,8 @@
 
 
       <%--   轮播图   --%>
-      <div class="col-md-8 col-xs-8" style="background-color: darkgrey; height: 100%">
-        <div class="box" style="height: 100%; background-color: #843534;margin-left: 0;margin-left: 0" >
+      <div class="col-md-10 col-xs-10   " style=" height: 100%">
+        <div class="box" style="height: 100%; margin-left: 0;margin-left: 0" >
             <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000" >
                 <!-- 轮播（Carousel）指标 -->
 
@@ -77,15 +77,11 @@
             </div>
         </div>
 
-        <div class="center-buttom">
-          fff
-        </div>
+
       </div>
 
       <%--   新闻   --%>
-      <div class="col-md-2 col-xs-2" style="background-color: #2aabd2 ; height: 100%">
-        ffffffff
-      </div>
+
     </div>
   </div>
 </body>
