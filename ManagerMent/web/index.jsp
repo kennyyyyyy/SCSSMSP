@@ -21,14 +21,13 @@
     <nav class="navbar navbar-default navbar-fixed-top" style=" margin-bottom: 5px; border: 0">
       <div class="container-fluid row">
         <div class="navbar-header col-md-1 col-xs-1">
-            <span class="logo"></span>
+            <a href="index.jsp"><span class="logo"></span></a>
         </div>
 
         <div class="navbar-text col-md-9 col-xs-9" style="text-align: center; margin-left: 5%">
           <p style="font-size: 18px">学籍管理系统</p>
         </div>
 
-        <%--    实现鼠标放上去显示下拉窗口    --%>
         <ul class="nav navbar-nav navbar-right  col-md-1 col-xs-1">
           <li><a href="login.jsp" style="color: whitesmoke">登录</a></li>
         </ul>
@@ -36,7 +35,7 @@
     </nav>
 
 
-    <div class="row" style="height: 700px; margin: 55px 2px 0">
+    <div class="row" style="height: 700px; margin: 60px 2px 0">
 
       <%--   通告   --%>
       <div class="col-md-2 col-xs-2 notice">
@@ -55,7 +54,7 @@
 
       <%--   轮播图   --%>
       <div class="col-md-10 col-xs-10   " style=" height: 100%">
-        <div class="box" style="height: 100%; margin-left: 0;margin-left: 0" >
+        <div class="box" style="height: 100%; margin-left: 0px;" >
             <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000" >
                 <!-- 轮播（Carousel）指标 -->
 
@@ -76,11 +75,7 @@
 
             </div>
         </div>
-
-
       </div>
-
-      <%--   新闻   --%>
 
     </div>
   </div>

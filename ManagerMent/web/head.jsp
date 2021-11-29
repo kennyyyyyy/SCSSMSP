@@ -17,7 +17,7 @@
 
             <div class="navbar-header">
             <%-- 链接登录页面--%>
-                <a href="login.jsp" target="_parent">
+                <a href="index.jsp" target="_parent">
                     <span class="logo"></span>
 <%--                        <img src="images/head/logo.png" alt="">--%>
                 </a>
