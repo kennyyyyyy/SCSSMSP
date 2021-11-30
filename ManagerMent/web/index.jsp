@@ -42,10 +42,10 @@
         <div>
           <ul class="notice">
             <li><span><img src="images/leftico02.png" alt=""><a href="#">关于进一步加强校园出入管理的通告</a></span></li>
-            <li><span><img src="images/leftico02.png" alt=""><a href="#">关于进一步加强校园出入管理的通告</a></span></li>
-            <li><span><img src="images/leftico02.png" alt=""><a href="#">关于进一步加强校园出入管理的通告</a></span></li>
-            <li><span><img src="images/leftico02.png" alt=""><a href="#">关于进一步加强校园出入管理的通告</a></span></li>
-            <li><span><img src="images/leftico02.png" alt=""><a href="#">关于进一步加强校园出入管理的通告</a></span></li>
+            <li><span><img src="images/leftico02.png" alt=""><a href="#">关于进一步加强校园电动车管理的通告</a></span></li>
+            <li><span><img src="images/leftico02.png" alt=""><a href="#">关于进一步加强校园疫情纪律管理的通告</a></span></li>
+              <li><span><img src="images/leftico02.png" alt=""><a href="#">统一身份认证平台安全升级通知</a></span></li>
+            <li><span><img src="images/leftico02.png" alt=""><a href="#">奖学金名单公示</a></span></li>
 
           </ul>
         </div>
